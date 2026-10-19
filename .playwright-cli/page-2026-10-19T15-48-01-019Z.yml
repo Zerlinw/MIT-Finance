@@ -1,0 +1,525 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "OpenCourseAtlas 全球名校公开课图解库" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - text: OpenCourseAtlas
+        - generic [ref=e5]: 全球名校公开课图解库
+      - generic [ref=e6]:
+        - link "首页" [ref=e7] [cursor=pointer]:
+          - /url: index.html
+        - link "学校" [ref=e8] [cursor=pointer]:
+          - /url: universities.html
+        - link "课程" [ref=e9] [cursor=pointer]:
+          - /url: courses.html
+        - link "最新图解" [ref=e10] [cursor=pointer]:
+          - /url: index.html#latest
+        - link "深度专题" [ref=e11] [cursor=pointer]:
+          - /url: mit-finance.html
+      - search [ref=e12]:
+        - generic [ref=e13]: 🔍
+        - textbox "搜索" [ref=e14]:
+          - /placeholder: 搜索课程 / 学校 / 学科…
+        - button "搜索" [ref=e15] [cursor=pointer]
+  - banner [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: 图解合集 · 零视频 · 持续更新
+      - heading "世界名校的公开课图解合集" [level=1] [ref=e21]: 世界名校公开课图解合集
+      - paragraph [ref=e22]: 聚焦 QS 排名靠前的知名高校，按 学校 → 学科 → 课程 三级组织。 每门课程拆解为课程概述、知识点图解、章节结构—— 只收录图解内容，明确排除视频，让知识可以被一眼看懂、随时翻看。
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: "10"
+          - generic [ref=e26]: 收录学校
+        - generic [ref=e27]:
+          - generic [ref=e28]: "14"
+          - generic [ref=e29]: 图解课程
+        - generic [ref=e30]:
+          - generic [ref=e31]: "84"
+          - generic [ref=e32]: 知识点图解
+        - generic [ref=e33]:
+          - generic [ref=e34]: "8"
+          - generic [ref=e35]: 覆盖学科
+      - generic [ref=e36]:
+        - link "浏览全部课程 ↓" [ref=e37] [cursor=pointer]:
+          - /url: courses.html
+        - link "按学校探索" [ref=e38] [cursor=pointer]:
+          - /url: universities.html
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: 💻
+        - generic [ref=e42]: 计算机科学
+        - text: 从二进制到机器学习
+      - generic [ref=e43]:
+        - generic [ref=e44]: 📐
+        - generic [ref=e45]: 数学
+        - text: 矩阵、极限与证明
+      - generic [ref=e46]:
+        - generic [ref=e47]: ⚛️
+        - generic [ref=e48]: 物理
+        - text: 力学与量子世界
+      - generic [ref=e49]:
+        - generic [ref=e50]: 📈
+        - generic [ref=e51]: 经济金融
+        - text: 供需、现值与风险
+      - generic [ref=e52]:
+        - generic [ref=e53]: 🧠
+        - generic [ref=e54]: 心理学
+        - text: 幸福与心流
+      - generic [ref=e55]:
+        - generic [ref=e56]: 🏛
+        - generic [ref=e57]: 哲学人文
+        - text: 论证与伦理学
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: Disciplines
+        - heading [level=2] [ref=e63]:
+          - text: 按
+          - emphasis [ref=e64]: 学科
+          - text: 进入
+        - paragraph [ref=e65]: 八大方向，覆盖理工、社科与人文。点击任意学科，查看该方向下的全部图解课程。
+      - link "全部课程 →" [ref=e66] [cursor=pointer]:
+        - /url: courses.html
+    - generic [ref=e67]:
+      - link "💻 计算机科学 5 门课程 · 31 张图解 →" [ref=e68] [cursor=pointer]:
+        - /url: courses.html?discipline=cs
+        - generic [ref=e69]: 💻
+        - heading "计算机科学" [level=3] [ref=e70]
+        - generic [ref=e71]: 5 门课程 · 31 张图解
+        - text: →
+      - link "📐 数学 2 门课程 · 11 张图解 →" [ref=e72] [cursor=pointer]:
+        - /url: courses.html?discipline=math
+        - generic [ref=e73]: 📐
+        - heading "数学" [level=3] [ref=e74]
+        - generic [ref=e75]: 2 门课程 · 11 张图解
+        - text: →
+      - link "⚛️ 物理 2 门课程 · 12 张图解 →" [ref=e76] [cursor=pointer]:
+        - /url: courses.html?discipline=physics
+        - generic [ref=e77]: ⚛️
+        - heading "物理" [level=3] [ref=e78]
+        - generic [ref=e79]: 2 门课程 · 12 张图解
+        - text: →
+      - link "📈 经济与金融 2 门课程 · 12 张图解 →" [ref=e80] [cursor=pointer]:
+        - /url: courses.html?discipline=economics
+        - generic [ref=e81]: 📈
+        - heading "经济与金融" [level=3] [ref=e82]
+        - generic [ref=e83]: 2 门课程 · 12 张图解
+        - text: →
+      - link "⚙️ 工程 1 门课程 · 6 张图解 →" [ref=e84] [cursor=pointer]:
+        - /url: courses.html?discipline=engineering
+        - generic [ref=e85]: ⚙️
+        - heading "工程" [level=3] [ref=e86]
+        - generic [ref=e87]: 1 门课程 · 6 张图解
+        - text: →
+      - link "🧬 生物与医学 0 门课程 · 0 张图解 →" [ref=e88] [cursor=pointer]:
+        - /url: courses.html?discipline=biology
+        - generic [ref=e89]: 🧬
+        - heading "生物与医学" [level=3] [ref=e90]
+        - generic [ref=e91]: 0 门课程 · 0 张图解
+        - text: →
+      - link "🧠 心理学 1 门课程 · 6 张图解 →" [ref=e92] [cursor=pointer]:
+        - /url: courses.html?discipline=psychology
+        - generic [ref=e93]: 🧠
+        - heading "心理学" [level=3] [ref=e94]
+        - generic [ref=e95]: 1 门课程 · 6 张图解
+        - text: →
+      - link "🏛 哲学与人文 1 门课程 · 6 张图解 →" [ref=e96] [cursor=pointer]:
+        - /url: courses.html?discipline=philosophy
+        - generic [ref=e97]: 🏛
+        - heading "哲学与人文" [level=3] [ref=e98]
+        - generic [ref=e99]: 1 门课程 · 6 张图解
+        - text: →
+  - generic [ref=e101]:
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e104]: Featured
+        - heading [level=2] [ref=e105]:
+          - text: 编辑
+          - emphasis [ref=e106]: 推荐
+          - text: 课程
+        - paragraph [ref=e107]: 从收录课程中挑选的高质量图解合集，适合作为第一站。
+      - link "更多推荐 →" [ref=e108] [cursor=pointer]:
+        - /url: courses.html?sort=featured
+    - generic [ref=e109]:
+      - link "★ 编辑推荐 MIT · 计算机科学 计算机科学导论与 Python 编程 Introduction to Computer Science and Programming in Python 入门 7 张图解 代号 6.0001 约 150 分钟" [ref=e111] [cursor=pointer]:
+        - /url: course.html?id=mit-6-0001
+        - generic [ref=e112]:
+          - img [aria-hidden] [ref=e113]:
+            - generic [ref=e123]: "6.0001"
+          - generic [ref=e124]: ★ 编辑推荐
+        - generic [ref=e125]:
+          - generic [ref=e126]: MIT · 计算机科学
+          - generic [ref=e127]: 计算机科学导论与 Python 编程
+          - generic [ref=e128]: Introduction to Computer Science and Programming in Python
+          - generic [ref=e129]:
+            - generic [ref=e130]: 入门
+            - generic [ref=e131]: 7 张图解
+          - generic [ref=e132]:
+            - generic [ref=e133]: 代号 6.0001
+            - generic [ref=e134]: 约 150 分钟
+      - link "★ 编辑推荐 MIT · 数学 线性代数 Linear Algebra 入门 5 张图解 代号 18.06 约 160 分钟" [ref=e136] [cursor=pointer]:
+        - /url: course.html?id=mit-18-06
+        - generic [ref=e137]:
+          - img [aria-hidden] [ref=e138]:
+            - generic [ref=e148]: "18.06"
+          - generic [ref=e149]: ★ 编辑推荐
+        - generic [ref=e150]:
+          - generic [ref=e151]: MIT · 数学
+          - generic [ref=e152]: 线性代数
+          - generic [ref=e153]: Linear Algebra
+          - generic [ref=e154]:
+            - generic [ref=e155]: 入门
+            - generic [ref=e156]: 5 张图解
+          - generic [ref=e157]:
+            - generic [ref=e158]: 代号 18.06
+            - generic [ref=e159]: 约 160 分钟
+      - link "★ 编辑推荐 MIT · 经济与金融 金融理论 I Finance Theory I 进阶 6 张图解 代号 15.401 约 专题 分钟" [ref=e161] [cursor=pointer]:
+        - /url: course.html?id=mit-15-401
+        - generic [ref=e162]:
+          - img [aria-hidden] [ref=e163]:
+            - generic [ref=e173]: "15.401"
+          - generic [ref=e174]: ★ 编辑推荐
+        - generic [ref=e175]:
+          - generic [ref=e176]: MIT · 经济与金融
+          - generic [ref=e177]: 金融理论 I
+          - generic [ref=e178]: Finance Theory I
+          - generic [ref=e179]:
+            - generic [ref=e180]: 进阶
+            - generic [ref=e181]: 6 张图解
+          - generic [ref=e182]:
+            - generic [ref=e183]: 代号 15.401
+            - generic [ref=e184]: 约 专题 分钟
+      - link "★ 编辑推荐 Stanford · 计算机科学 机器学习 Machine Learning 高阶 6 张图解 代号 CS229 约 180 分钟" [ref=e186] [cursor=pointer]:
+        - /url: course.html?id=stanford-cs229
+        - generic [ref=e187]:
+          - img [aria-hidden] [ref=e188]:
+            - generic [ref=e198]: CS229
+          - generic [ref=e199]: ★ 编辑推荐
+        - generic [ref=e200]:
+          - generic [ref=e201]: Stanford · 计算机科学
+          - generic [ref=e202]: 机器学习
+          - generic [ref=e203]: Machine Learning
+          - generic [ref=e204]:
+            - generic [ref=e205]: 高阶
+            - generic [ref=e206]: 6 张图解
+          - generic [ref=e207]:
+            - generic [ref=e208]: 代号 CS229
+            - generic [ref=e209]: 约 180 分钟
+      - 'link "★ 编辑推荐 Harvard · 计算机科学 计算机科学导论 CS50 CS50: Introduction to Computer Science 入门 6 张图解 代号 CS50 约 170 分钟" [ref=e211] [cursor=pointer]':
+        - /url: course.html?id=harvard-cs50
+        - generic [ref=e212]:
+          - img [aria-hidden] [ref=e213]:
+            - generic [ref=e223]: CS50
+          - generic [ref=e224]: ★ 编辑推荐
+        - generic [ref=e225]:
+          - generic [ref=e226]: Harvard · 计算机科学
+          - generic [ref=e227]: 计算机科学导论 CS50
+          - generic [ref=e228]: "CS50: Introduction to Computer Science"
+          - generic [ref=e229]:
+            - generic [ref=e230]: 入门
+            - generic [ref=e231]: 6 张图解
+          - generic [ref=e232]:
+            - generic [ref=e233]: 代号 CS50
+            - generic [ref=e234]: 约 170 分钟
+      - link "★ 编辑推荐 Harvard · 心理学 积极心理学 Positive Psychology 入门 6 张图解 代号 Psychology 1504 约 110 分钟" [ref=e236] [cursor=pointer]:
+        - /url: course.html?id=harvard-psy1504
+        - generic [ref=e237]:
+          - img [aria-hidden] [ref=e238]:
+            - generic [ref=e248]: Psychology 1504
+          - generic [ref=e249]: ★ 编辑推荐
+        - generic [ref=e250]:
+          - generic [ref=e251]: Harvard · 心理学
+          - generic [ref=e252]: 积极心理学
+          - generic [ref=e253]: Positive Psychology
+          - generic [ref=e254]:
+            - generic [ref=e255]: 入门
+            - generic [ref=e256]: 6 张图解
+          - generic [ref=e257]:
+            - generic [ref=e258]: 代号 Psychology 1504
+            - generic [ref=e259]: 约 110 分钟
+      - link "★ 编辑推荐 ETH · 物理 量子力学导论 Introduction to Quantum Mechanics 高阶 6 张图解 代号 量子力学导论 约 150 分钟" [ref=e261] [cursor=pointer]:
+        - /url: course.html?id=eth-quantum
+        - generic [ref=e262]:
+          - img [aria-hidden] [ref=e263]:
+            - generic [ref=e273]: 量子力学导论
+          - generic [ref=e274]: ★ 编辑推荐
+        - generic [ref=e275]:
+          - generic [ref=e276]: ETH · 物理
+          - generic [ref=e277]: 量子力学导论
+          - generic [ref=e278]: Introduction to Quantum Mechanics
+          - generic [ref=e279]:
+            - generic [ref=e280]: 高阶
+            - generic [ref=e281]: 6 张图解
+          - generic [ref=e282]:
+            - generic [ref=e283]: 代号 量子力学导论
+            - generic [ref=e284]: 约 150 分钟
+  - generic [ref=e286]:
+    - generic [ref=e287]:
+      - generic [ref=e288]:
+        - generic [ref=e289]: Universities
+        - heading [level=2] [ref=e290]:
+          - text: QS
+          - emphasis [ref=e291]: 名校
+          - text: 巡礼
+        - paragraph [ref=e292]: 收录 QS 世界大学排名前十的高校，课程持续扩充中。
+      - link "全部学校 →" [ref=e293] [cursor=pointer]:
+        - /url: universities.html
+    - generic [ref=e294]:
+      - 'link "MIT 麻省理工学院 Massachusetts Institute of Technology 以理工与科研立校的世界第一学府，OpenCourseWare（OCW）将数千门课程讲义、习题与考试题免费开放，是本平台绝大多数课程的源头。 QS #1 美国 5 门课程 30 张图解" [ref=e296] [cursor=pointer]':
+        - /url: university.html?id=mit
+        - generic [ref=e297]: MIT
+        - generic [ref=e298]:
+          - heading "麻省理工学院" [level=3] [ref=e299]
+          - generic [ref=e300]: Massachusetts Institute of Technology
+          - generic [ref=e301]: 以理工与科研立校的世界第一学府，OpenCourseWare（OCW）将数千门课程讲义、习题与考试题免费开放，是本平台绝大多数课程的源头。
+          - generic [ref=e302]:
+            - generic [ref=e303]: "QS #1"
+            - generic [ref=e304]: 美国
+            - generic [ref=e305]: 5 门课程
+            - generic [ref=e306]: 30 张图解
+      - 'link "IC 帝国理工学院 Imperial College London 专注科学、工程、医学与商科的英国研究型重镇，以跨学科训练和产业联系著称。 QS #2 英国 1 门课程 6 张图解" [ref=e308] [cursor=pointer]':
+        - /url: university.html?id=imperial
+        - generic [ref=e309]: IC
+        - generic [ref=e310]:
+          - heading "帝国理工学院" [level=3] [ref=e311]
+          - generic [ref=e312]: Imperial College London
+          - generic [ref=e313]: 专注科学、工程、医学与商科的英国研究型重镇，以跨学科训练和产业联系著称。
+          - generic [ref=e314]:
+            - generic [ref=e315]: "QS #2"
+            - generic [ref=e316]: 英国
+            - generic [ref=e317]: 1 门课程
+            - generic [ref=e318]: 6 张图解
+      - 'link "Oxford 牛津大学 University of Oxford 英语世界最古老的大学，导师制（Tutorial）与人文社科传统深厚，哲学、PPE 与数学均为王牌。 QS #3 英国 1 门课程 6 张图解" [ref=e320] [cursor=pointer]':
+        - /url: university.html?id=oxford
+        - generic [ref=e321]: Oxford
+        - generic [ref=e322]:
+          - heading "牛津大学" [level=3] [ref=e323]
+          - generic [ref=e324]: University of Oxford
+          - generic [ref=e325]: 英语世界最古老的大学，导师制（Tutorial）与人文社科传统深厚，哲学、PPE 与数学均为王牌。
+          - generic [ref=e326]:
+            - generic [ref=e327]: "QS #3"
+            - generic [ref=e328]: 英国
+            - generic [ref=e329]: 1 门课程
+            - generic [ref=e330]: 6 张图解
+      - 'link "Harvard 哈佛大学 Harvard University 美国历史最悠久的高等学府，CS50 是全球最受欢迎的编程入门课，积极心理学公开课影响千万人。 QS #4 美国 2 门课程 12 张图解" [ref=e332] [cursor=pointer]':
+        - /url: university.html?id=harvard
+        - generic [ref=e333]: Harvard
+        - generic [ref=e334]:
+          - heading "哈佛大学" [level=3] [ref=e335]
+          - generic [ref=e336]: Harvard University
+          - generic [ref=e337]: 美国历史最悠久的高等学府，CS50 是全球最受欢迎的编程入门课，积极心理学公开课影响千万人。
+          - generic [ref=e338]:
+            - generic [ref=e339]: "QS #4"
+            - generic [ref=e340]: 美国
+            - generic [ref=e341]: 2 门课程
+            - generic [ref=e342]: 12 张图解
+      - 'link "Cambridge 剑桥大学 University of Cambridge 与牛津齐名的英国双璧，自然科学 Tripos 体系以广度与深度并重闻名，牛顿、图灵曾在此求学。 QS #5 英国 1 门课程 6 张图解" [ref=e344] [cursor=pointer]':
+        - /url: university.html?id=cambridge
+        - generic [ref=e345]: Cambridge
+        - generic [ref=e346]:
+          - heading "剑桥大学" [level=3] [ref=e347]
+          - generic [ref=e348]: University of Cambridge
+          - generic [ref=e349]: 与牛津齐名的英国双璧，自然科学 Tripos 体系以广度与深度并重闻名，牛顿、图灵曾在此求学。
+          - generic [ref=e350]:
+            - generic [ref=e351]: "QS #5"
+            - generic [ref=e352]: 英国
+            - generic [ref=e353]: 1 门课程
+            - generic [ref=e354]: 6 张图解
+      - 'link "Stanford 斯坦福大学 Stanford University 硅谷的智力引擎，CS229 机器学习公开课是无数算法工程师的启蒙，创业文化浓厚。 QS #6 美国 2 门课程 12 张图解" [ref=e356] [cursor=pointer]':
+        - /url: university.html?id=stanford
+        - generic [ref=e357]: Stanford
+        - generic [ref=e358]:
+          - heading "斯坦福大学" [level=3] [ref=e359]
+          - generic [ref=e360]: Stanford University
+          - generic [ref=e361]: 硅谷的智力引擎，CS229 机器学习公开课是无数算法工程师的启蒙，创业文化浓厚。
+          - generic [ref=e362]:
+            - generic [ref=e363]: "QS #6"
+            - generic [ref=e364]: 美国
+            - generic [ref=e365]: 2 门课程
+            - generic [ref=e366]: 12 张图解
+      - 'link "ETH 苏黎世联邦理工学院 ETH Zürich 欧洲大陆理工科排名第一的高校，爱因斯坦的母校，以严谨的物理与数学训练著称。 QS #7 瑞士 1 门课程 6 张图解" [ref=e368] [cursor=pointer]':
+        - /url: university.html?id=eth
+        - generic [ref=e369]: ETH
+        - generic [ref=e370]:
+          - heading "苏黎世联邦理工学院" [level=3] [ref=e371]
+          - generic [ref=e372]: ETH Zürich
+          - generic [ref=e373]: 欧洲大陆理工科排名第一的高校，爱因斯坦的母校，以严谨的物理与数学训练著称。
+          - generic [ref=e374]:
+            - generic [ref=e375]: "QS #7"
+            - generic [ref=e376]: 瑞士
+            - generic [ref=e377]: 1 门课程
+            - generic [ref=e378]: 6 张图解
+      - 'link "NUS 新加坡国立大学 National University of Singapore 亚洲排名第一的综合性大学，数据科学与计算机课程对全球学习者高度开放。 QS #8 新加坡 1 门课程 6 张图解" [ref=e380] [cursor=pointer]':
+        - /url: university.html?id=nus
+        - generic [ref=e381]: NUS
+        - generic [ref=e382]:
+          - heading "新加坡国立大学" [level=3] [ref=e383]
+          - generic [ref=e384]: National University of Singapore
+          - generic [ref=e385]: 亚洲排名第一的综合性大学，数据科学与计算机课程对全球学习者高度开放。
+          - generic [ref=e386]:
+            - generic [ref=e387]: "QS #8"
+            - generic [ref=e388]: 新加坡
+            - generic [ref=e389]: 1 门课程
+            - generic [ref=e390]: 6 张图解
+      - 'link "UCL 伦敦大学学院 University College London 神经科学与心理学的学术重镇，UCL 神经科学公开课以严谨和可视化解剖图谱闻名。 QS #9 英国 0 门课程 0 张图解" [ref=e392] [cursor=pointer]':
+        - /url: university.html?id=ucl
+        - generic [ref=e393]: UCL
+        - generic [ref=e394]:
+          - heading "伦敦大学学院" [level=3] [ref=e395]
+          - generic [ref=e396]: University College London
+          - generic [ref=e397]: 神经科学与心理学的学术重镇，UCL 神经科学公开课以严谨和可视化解剖图谱闻名。
+          - generic [ref=e398]:
+            - generic [ref=e399]: "QS #9"
+            - generic [ref=e400]: 英国
+            - generic [ref=e401]: 0 门课程
+            - generic [ref=e402]: 0 张图解
+      - 'link "Caltech 加州理工学院 California Institute of Technology 规模精小而科研密度极高的理工院校，费曼《物理学讲义》源于此，是物理图解学习的圣地。 QS #10 美国 0 门课程 0 张图解" [ref=e404] [cursor=pointer]':
+        - /url: university.html?id=caltech
+        - generic [ref=e405]: Caltech
+        - generic [ref=e406]:
+          - heading "加州理工学院" [level=3] [ref=e407]
+          - generic [ref=e408]: California Institute of Technology
+          - generic [ref=e409]: 规模精小而科研密度极高的理工院校，费曼《物理学讲义》源于此，是物理图解学习的圣地。
+          - generic [ref=e410]:
+            - generic [ref=e411]: "QS #10"
+            - generic [ref=e412]: 美国
+            - generic [ref=e413]: 0 门课程
+            - generic [ref=e414]: 0 张图解
+  - generic [ref=e416]:
+    - generic [ref=e418]:
+      - generic [ref=e419]: Latest Figures
+      - heading [level=2] [ref=e420]:
+        - text: 最近
+        - emphasis [ref=e421]: 上图
+      - paragraph [ref=e422]: 各课程最新整理的知识点图解，点击即可进入图解浏览器（支持放大与切换）。
+    - generic [ref=e423]:
+      - link "货币的时间价值 MIT · 金融理论 I" [ref=e424] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=0
+        - img [ref=e426]:
+          - generic [ref=e427]: 100 元的终值增长 vs 现值衰减（年化 8%）
+          - generic [ref=e442]: 年数 →
+          - generic [ref=e443]: 金额
+          - generic [ref=e444]: 终值（未来有多少）
+          - generic [ref=e445]: 现值（今天值多少）
+        - generic [ref=e446]:
+          - generic [ref=e447]: 货币的时间价值
+          - generic [ref=e448]: MIT · 金融理论 I
+      - link "贴现因子 MIT · 金融理论 I" [ref=e449] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=1
+        - img [ref=e451]:
+          - generic [ref=e452]: 利率水平的光谱（名义）
+          - generic [ref=e454]: 负利率
+          - generic [ref=e455]: 高利率
+          - generic [ref=e457]: 负利率
+          - generic [ref=e458]: 现金避风港
+          - generic [ref=e460]: 通胀锚
+          - generic [ref=e461]: ≈ 2%
+          - generic [ref=e463]: 国债利率
+          - generic [ref=e464]: 无风险基准
+          - generic [ref=e466]: 股权期望
+          - generic [ref=e467]: 风险溢价
+        - generic [ref=e468]:
+          - generic [ref=e469]: 贴现因子
+          - generic [ref=e470]: MIT · 金融理论 I
+      - link "债券与利率反向 MIT · 金融理论 I" [ref=e471] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=2
+        - img [ref=e473]:
+          - generic [ref=e474]: 债券价格 vs 市场利率
+          - generic [ref=e483]: 票面利率发行
+          - generic [ref=e484]: 市场利率 →
+          - generic [ref=e485]: 债券价格
+          - generic [ref=e486]: 债券价格
+        - generic [ref=e487]:
+          - generic [ref=e488]: 债券与利率反向
+          - generic [ref=e489]: MIT · 金融理论 I
+      - link "收益率曲线 MIT · 金融理论 I" [ref=e490] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=3
+        - img [ref=e492]:
+          - generic [ref=e493]: 收益率曲线的三种典型形态
+          - generic [ref=e514]: 到期期限 →
+          - generic [ref=e515]: 收益率
+          - generic [ref=e516]: 正常（向上）
+          - generic [ref=e517]: 平坦
+          - generic [ref=e518]: 倒挂（向下）
+        - generic [ref=e519]:
+          - generic [ref=e520]: 收益率曲线
+          - generic [ref=e521]: MIT · 金融理论 I
+      - link "风险收益象限 MIT · 金融理论 I" [ref=e522] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=4
+        - img [ref=e524]:
+          - generic [ref=e525]: 资产的风险—收益地图
+          - generic [ref=e527]: 现金与国债
+          - generic [ref=e528]: 低风险 · 低收益 · 抗跌
+          - generic [ref=e530]: 股权与风投
+          - generic [ref=e531]: 高风险 · 高期望收益
+          - generic [ref=e533]: 长期存款
+          - generic [ref=e534]: 实际收益可能为负
+          - generic [ref=e536]: 高收益债
+          - generic [ref=e537]: 信用风险补偿
+          - generic [ref=e538]: 风险 σ →
+          - generic [ref=e539]: 期望收益 ↑
+        - generic [ref=e540]:
+          - generic [ref=e541]: 风险收益象限
+          - generic [ref=e542]: MIT · 金融理论 I
+      - link "期权非线性 MIT · 金融理论 I" [ref=e543] [cursor=pointer]:
+        - /url: gallery.html?course=mit-15-401&fig=5
+        - img [ref=e545]:
+          - generic [ref=e546]: 看涨期权到期损益（行权价 100）
+          - generic [ref=e562]: 最大损失 = 权利金
+          - generic [ref=e563]: 到期股价 →
+          - generic [ref=e564]: 损益
+          - generic [ref=e565]: 买方
+          - generic [ref=e566]: 卖方
+        - generic [ref=e567]:
+          - generic [ref=e568]: 期权非线性
+          - generic [ref=e569]: MIT · 金融理论 I
+      - link "学习范式地图 Stanford · 机器学习" [ref=e570] [cursor=pointer]:
+        - /url: gallery.html?course=stanford-cs229&fig=0
+        - img [ref=e572]:
+          - generic [ref=e573]: 机器学习三大范式
+          - generic [ref=e575]: 监督学习
+          - generic [ref=e578]: 分类
+          - generic [ref=e581]: 回归
+          - generic [ref=e583]: 无监督学习
+          - generic [ref=e586]: 聚类
+          - generic [ref=e589]: 降维
+          - generic [ref=e591]: 强化学习
+          - generic [ref=e594]: 策略学习
+          - generic [ref=e597]: 奖励建模
+        - generic [ref=e598]:
+          - generic [ref=e599]: 学习范式地图
+          - generic [ref=e600]: Stanford · 机器学习
+      - link "判别式 vs 生成式 Stanford · 机器学习" [ref=e601] [cursor=pointer]:
+        - /url: gallery.html?course=stanford-cs229&fig=1
+        - img [ref=e603]:
+          - generic [ref=e604]: 两条建模路线
+          - generic [ref=e606]: 判别式：学边界 P(y|x)
+          - generic [ref=e608]: 生成式：学分布 P(x,y)
+          - generic [ref=e609]: 混合使用
+          - generic [ref=e610]: 半监督、异常检测等场景常结合两者
+        - generic [ref=e611]:
+          - generic [ref=e612]: 判别式 vs 生成式
+          - generic [ref=e613]: Stanford · 机器学习
+  - contentinfo [ref=e614]:
+    - generic [ref=e615]:
+      - generic [ref=e616]:
+        - generic [ref=e617]:
+          - heading "关于 OpenCourseAtlas" [level=5] [ref=e618]
+          - paragraph [ref=e619]: 专注于 QS 知名高校公开课的图解合集平台。按学校、学科、课程三级组织内容；每门课程以课程概述、知识点图解、章节结构呈现，只收录图解、不包含视频。内容整理自各校公开课程资料，仅用于学习交流。
+        - generic [ref=e620]:
+          - heading "浏览" [level=5] [ref=e621]
+          - paragraph [ref=e622]:
+            - link "学校列表" [ref=e623] [cursor=pointer]:
+              - /url: universities.html
+            - text: ·
+            - link "课程列表" [ref=e624] [cursor=pointer]:
+              - /url: courses.html
+            - text: ·
+            - link "学科分类" [ref=e625] [cursor=pointer]:
+              - /url: index.html#disciplines
+            - link "MIT 金融课 · 深度专题" [ref=e626] [cursor=pointer]:
+              - /url: mit-finance.html
+        - generic [ref=e627]:
+          - heading "内容扩展" [level=5] [ref=e628]
+          - paragraph [ref=e629]: 数据模型开放：新增学校与课程只需扩展数据文件，图解渲染自动完成，结构随规模增长保持清晰。
+      - generic [ref=e630]: 免责声明：本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有；不构成任何投资或专业建议。如有异议请联系删除。

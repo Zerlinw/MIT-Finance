@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课程列表 · 按学校/学科/难度筛选 - OpenCourseAtlas</title>
+<meta name="description" content="浏览全部公开课图解课程，支持按学校、学科、难度筛选与关键词搜索。">
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body data-page="courses">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
+    </div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+<div class="wrap-wide">
+  <div class="page-head">
+    <div class="crumb"><a href="index.html">首页</a> / 课程列表</div>
+    <h1>全部<em>图解课程</em></h1>
+    <p class="lead">按学校、学科、难度三个维度筛选，或用关键词搜索课程名称、课程代号、讲师与标签。筛选状态会同步到网址，方便分享与收藏。</p>
+  </div>
+
+  <div class="filter-bar" style="margin-top:26px">
+    <div class="f-search">
+      <span>🔍</span>
+      <input type="text" id="fSearch" placeholder="搜索课程 / 代号 / 讲师 / 标签…" aria-label="搜索课程">
+    </div>
+    <select class="f-select" id="fSchool" aria-label="按学校筛选"></select>
+    <select class="f-select" id="fDisc" aria-label="按学科筛选"></select>
+    <select class="f-select" id="fSort" aria-label="排序方式"></select>
+    <div class="lv-chips" id="lvChips"></div>
+  </div>
+
+  <div class="result-bar">
+    <div class="result-count" id="resultCount"></div>
+    <div class="active-filters" id="activeFilters"></div>
+  </div>
+
+  <div class="card-grid" id="courseGrid"></div>
+</div>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="f-grid">
+      <div>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。</p>
+      </div>
+      <div>
+        <h5>浏览</h5>
+        <p><a href="universities.html">学校列表</a> · <a href="index.html#disciplines">学科分类</a> · <a href="mit-finance.html">深度专题</a></p>
+      </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>新增课程只需扩展数据文件，筛选与搜索自动覆盖。</p>
+      </div>
+    </div>
+    <div class="disclaimer">本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。</div>
+  </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
+</body>
+</html>

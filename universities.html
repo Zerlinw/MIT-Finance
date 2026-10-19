@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学校列表 · QS 名校图解课程 - OpenCourseAtlas</title>
+<meta name="description" content="收录 QS 世界大学排名前十的知名高校，按学校浏览公开课图解合集。">
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body data-page="universities">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
+    </div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+<div class="wrap-wide">
+  <div class="page-head">
+    <div class="crumb"><a href="index.html">首页</a> / 学校列表</div>
+    <h1>QS <em>名校</em>图解课程</h1>
+    <p class="lead">收录 QS 世界大学排名前十的高校。点击学校卡片，查看该校的学科分布与全部图解课程；部分学校的课程仍在整理中。</p>
+  </div>
+
+  <div class="filter-bar" style="margin-top:26px">
+    <div class="f-search">
+      <span>🔍</span>
+      <input type="text" id="fSearch" placeholder="搜索学校名称 / 简介…" aria-label="搜索学校">
+    </div>
+    <select class="f-select" id="fDisc" aria-label="按学科筛选"></select>
+    <select class="f-select" id="fCountry" aria-label="按国家筛选"></select>
+  </div>
+
+  <div class="result-bar">
+    <div class="result-count" id="resultCount"></div>
+  </div>
+
+  <div class="card-grid" id="schoolGrid"></div>
+</div>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="f-grid">
+      <div>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。</p>
+      </div>
+      <div>
+        <h5>浏览</h5>
+        <p><a href="index.html">首页</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+      </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>新增学校只需扩展数据文件，页面结构自动适配。</p>
+      </div>
+    </div>
+    <div class="disclaimer">本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。</div>
+  </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
+</body>
+</html>

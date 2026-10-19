@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课程详情 · 图解合集 - OpenCourseAtlas</title>
+<meta name="description" content="课程概述、知识点图解与章节结构，进入图解浏览器支持放大与切换。">
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body data-page="course">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
+    </div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+<div class="wrap-wide" id="courseBody">
+  <div class="page-head">
+    <div class="crumb">
+      <a href="index.html">首页</a> / <a href="universities.html">学校列表</a> /
+      <a id="crumbSchool" href="#">学校</a> / <span id="crumbCourse">课程</span>
+    </div>
+  </div>
+
+  <div class="course-hero">
+    <div class="ch-cover" id="cCover"></div>
+    <div class="ch-body">
+      <div class="ch-meta" id="cMeta"></div>
+      <h1 id="cTitle"></h1>
+      <div class="en" id="cEn"></div>
+      <div class="ch-tags" id="cTags"></div>
+      <div class="ch-actions" id="cCta"></div>
+    </div>
+  </div>
+
+  <div class="course-layout">
+    <div class="course-main">
+      <div class="overview-box" id="cOverview"></div>
+
+      <div class="sec-head" style="margin-top:44px">
+        <div>
+          <div class="sec-tag">Chapters</div>
+          <h2>章节结构</h2>
+          <p>课程按章节组织，每章包含若干知识点图解。点击章节展开，点击图解直接进入浏览。</p>
+        </div>
+      </div>
+      <div id="chapters"></div>
+
+      <div style="text-align:center;margin:36px 0 10px" id="cCtaBottom"></div>
+    </div>
+
+    <aside class="course-side">
+      <div class="side-card">
+        <h4>课程信息</h4>
+        <div id="sideStats"></div>
+      </div>
+      <div class="side-card">
+        <h4>开课学校</h4>
+        <div id="sideSchool"></div>
+      </div>
+      <div class="side-card">
+        <h4>相关课程</h4>
+        <div id="sideRelated" style="display:grid;gap:4px"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="f-grid">
+      <div>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。</p>
+      </div>
+      <div>
+        <h5>浏览</h5>
+        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+      </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>新增课程只需扩展数据文件，页面结构自动适配。</p>
+      </div>
+    </div>
+    <div class="disclaimer">本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。</div>
+  </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
+</body>
+</html>

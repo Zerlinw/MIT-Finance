@@ -3,334 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>把投资从赌博变成科学 · MIT 金融课 85 分钟精华蒸馏</title>
-<link rel="stylesheet" href="css/style.css">
+<title>OpenCourseAtlas · 全球名校公开课图解库</title>
+<meta name="description" content="专注于 QS 知名高校公开课的图解合集平台：按学校、学科、课程三级组织，只收录图解，不包含视频。">
+<link rel="stylesheet" href="css/platform.css">
 </head>
-<body>
+<body data-page="home">
 
 <nav>
   <div class="nav-inner">
-    <div class="logo"><b>MIT·FINANCE</b> 蒸馏计划</div>
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
     <div class="nav-links">
-      <a href="#thesis-sec">中心思想</a>
-      <a href="#compare">赌博 vs 科学</a>
-      <a href="#roadmap">七大模块</a>
-      <a href="#lab">交互实验室</a>
-      <a href="#quiz">认知自检</a>
-      <a href="#action">行动清单</a>
-      <a href="#extend">延伸学习</a>
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
     </div>
-    <div class="nav-src">公开课内容整理 · 非投资建议</div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
-<div class="wrap">
-  <header class="hero">
+<div class="wrap-wide">
+  <header class="phero">
     <div>
-      <div class="badge"><span class="dot"></span>视频蒸馏 · MIT 金融课精华整理 · 85 分钟</div>
-      <h1>把投资从<br><span class="strike">赌博</span>变成<span class="gold">科学</span></h1>
+      <div class="badge"><span class="dot"></span>图解合集 · 零视频 · 持续更新</div>
+      <h1>世界名校公开课<br><span class="gold">图解合集</span></h1>
       <p class="sub">
-        一堂 MIT 硬核金融课的认知框架：普通人如何用<b>数学</b>管理不确定性、
-        用<b>时间</b>让财富滚雪球。本页将 85 分钟视频蒸馏为
-        <b>7 大认知模块 + 3 个交互实验室</b>，每个节点都可以点。
+        聚焦 QS 排名靠前的知名高校，按 <b>学校 → 学科 → 课程</b> 三级组织。
+        每门课程拆解为<b>课程概述、知识点图解、章节结构</b>——
+        只收录图解内容，<b>明确排除视频</b>，让知识可以被一眼看懂、随时翻看。
       </p>
       <div class="hero-stats">
-        <div class="hstat"><div class="v">7</div><div class="k">认知模块</div></div>
-        <div class="hstat"><div class="v">3</div><div class="k">交互实验室</div></div>
-        <div class="hstat"><div class="v">5</div><div class="k">核心公式</div></div>
-        <div class="hstat"><div class="v">3</div><div class="k">自检测验</div></div>
+        <div class="hstat"><div class="v" id="statSchools">—</div><div class="k">收录学校</div></div>
+        <div class="hstat"><div class="v" id="statCourses">—</div><div class="k">图解课程</div></div>
+        <div class="hstat"><div class="v" id="statFigures">—</div><div class="k">知识点图解</div></div>
+        <div class="hstat"><div class="v" id="statDisc">—</div><div class="k">覆盖学科</div></div>
       </div>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#roadmap">开始探索七大模块 ↓</a>
-        <a class="btn btn-ghost" href="#lab">直接玩交互实验室</a>
+        <a class="btn btn-gold" href="courses.html">浏览全部课程 ↓</a>
+        <a class="btn btn-ghost" href="universities.html">按学校探索</a>
       </div>
     </div>
-    <div class="snowball-box">
-      <svg viewBox="0 0 520 400" id="snowSvg" aria-label="滚雪球复利动画">
-        <defs>
-          <linearGradient id="hillG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#1a2440"/><stop offset="1" stop-color="#0b1120"/>
-          </linearGradient>
-          <linearGradient id="ballG" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#f5c451"/><stop offset="1" stop-color="#e0a92e"/>
-          </linearGradient>
-          <linearGradient id="areaG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="rgba(245,196,81,.25)"/><stop offset="1" stop-color="rgba(245,196,81,0)"/>
-          </linearGradient>
-        </defs>
-        <!-- 山坡 -->
-        <path d="M20 380 C 120 360, 180 250, 300 150 S 460 40, 500 30 L500 380 Z" fill="url(#hillG)" stroke="rgba(255,255,255,.08)"/>
-        <!-- 复利曲线轨迹 -->
-        <path id="track" d="M40 360 C 160 340, 240 270, 330 180 S 450 70, 490 52" fill="none" stroke="url(#areaG)" stroke-width="30" stroke-linecap="round" opacity=".35"/>
-        <path d="M40 360 C 160 340, 240 270, 330 180 S 450 70, 490 52" fill="none" stroke="#f5c451" stroke-width="2.5" stroke-dasharray="5 7" opacity=".8"/>
-        <!-- 雪球 -->
-        <circle id="snowball" r="10" fill="url(#ballG)" cx="40" cy="360"/>
-        <text x="40" y="395" fill="#8b98ad" font-size="12" text-anchor="middle">小雪球 · 本金</text>
-        <text x="486" y="30" fill="#f5c451" font-size="12" text-anchor="middle">巨球 · 复利</text>
-      </svg>
-      <div class="snow-caption">很湿的雪（正收益）× 很长的坡（时间）= <b>财富滚雪球</b></div>
+    <div class="hero-collage">
+      <div class="hc"><span class="ico">💻</span><b>计算机科学</b>从二进制到机器学习</div>
+      <div class="hc"><span class="ico">📐</span><b>数学</b>矩阵、极限与证明</div>
+      <div class="hc"><span class="ico">⚛️</span><b>物理</b>力学与量子世界</div>
+      <div class="hc"><span class="ico">📈</span><b>经济金融</b>供需、现值与风险</div>
+      <div class="hc"><span class="ico">🧠</span><b>心理学</b>幸福与心流</div>
+      <div class="hc"><span class="ico">🏛</span><b>哲学人文</b>论证与伦理学</div>
     </div>
   </header>
 </div>
 
-<!-- ============ 中心思想 ============ -->
-<section id="thesis-sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Core Thesis</div>
-      <h2>这堂课只有一个<em>中心思想</em></h2>
-      <p>如果 85 分钟只能记住一句话，那就是下面这句。三大支柱撑起整个「财富滚雪球」的认知框架。</p>
-    </div>
-    <div class="thesis reveal">
-      <div class="quote">投资的本质，是<span>用数学管理不确定性</span>，<br>然后让<span>时间为复利工作</span>。</div>
-      <div class="src">—— distilled from MIT Finance ·「Mathematics + $$ = Finance」</div>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal" data-pillar="time">
-        <div class="more">+</div>
-        <div class="icon">⏳</div>
-        <h3>时间<small>TIME</small></h3>
-        <div class="brief">复利只奖励「在场足够久」的人。巴菲特 99% 的财富是 50 岁之后赚到的。</div>
-        <div class="detail">雪球要滚大，需要两个条件：<b>很湿的雪</b>（可持续的正收益率）和<b>很长的坡</b>（不中断的时间）。中途退出 = 雪球停下 = 奇迹不会发生。这就是为什么「开始得早」比「择时准」重要得多。</div>
+<!-- ============ 学科分类入口 ============ -->
+<section class="sec" id="disciplines">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Disciplines</div>
+        <h2>按<em>学科</em>进入</h2>
+        <p>八大方向，覆盖理工、社科与人文。点击任意学科，查看该方向下的全部图解课程。</p>
       </div>
-      <div class="pillar reveal" data-pillar="prob">
-        <div class="more">+</div>
-        <div class="icon">🎲</div>
-        <h3>概率<small>PROBABILITY</small></h3>
-        <div class="brief">单次结果靠运气，长期结果由期望值决定。大数定律是普通人最强大的盟友。</div>
-        <div class="detail">赌场不怕你赢一次，只怕你不来——因为每一局它都有微弱正期望，重复足够多次，利润必然兑现。<b>把赌场的逻辑反过来用在自己身上</b>：只参与正期望的游戏，然后让重复次数说话。</div>
-      </div>
-      <div class="pillar reveal" data-pillar="risk">
-        <div class="more">+</div>
-        <div class="icon">🛡</div>
-        <h3>风险<small>RISK</small></h3>
-        <div class="brief">先求不亏，再求赚钱。风险管理的目标不是消除波动，而是避免毁灭。</div>
-        <div class="detail">亏损 50% 需要赚 100% 才能回本——<b>不对称的伤害</b>是所有复利的头号杀手。所以科学的投资顺序永远是：先确定最坏情况能否承受，再讨论能赚多少。</div>
-      </div>
+      <a class="sec-more" href="courses.html">全部课程 →</a>
     </div>
+    <div class="disc-grid" id="discGrid"></div>
   </div>
 </section>
 
-<!-- ============ 赌博 vs 科学 ============ -->
-<section id="compare">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Gambling vs Science</div>
-      <h2>同一笔钱，两种<em>命运分岔</em></h2>
-      <p>赌博和投资的区别，不在于「有没有风险」，而在于期望值与时间维度。点击任意一行，看看两种思维的真实差距。</p>
-    </div>
-    <div class="vs-grid reveal">
-      <div class="vs-col gamble">
-        <h3>🎰 赌博思维</h3>
-        <div class="en">GAMBLING · 封闭的负期望游戏</div>
-        <div class="vs-row"><div class="k">时间观</div><div class="v">追求一夜暴富，越快越好</div></div>
-        <div class="vs-row"><div class="k">决策依据</div><div class="v">感觉、消息、直觉、「内部渠道」</div></div>
-        <div class="vs-row"><div class="k">下注方式</div><div class="v">重仓押注，一把定输赢</div></div>
-        <div class="vs-row"><div class="k">风险态度</div><div class="v">忽略最坏情况，赌「不会那么巧」</div></div>
-        <div class="vs-row"><div class="k">结果分布</div><div class="v">长期必输——规则由对手设计</div></div>
+<!-- ============ 精选课程 ============ -->
+<section class="sec" id="featured">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Featured</div>
+        <h2>编辑<em>推荐</em>课程</h2>
+        <p>从收录课程中挑选的高质量图解合集，适合作为第一站。</p>
       </div>
-      <div class="vs-col science">
-        <h3>🔬 科学思维</h3>
-        <div class="en">INVESTING · 开放的正期望游戏</div>
-        <div class="vs-row"><div class="k">时间观</div><div class="v">愿意慢慢变富，让雪球滚 10 年</div></div>
-        <div class="vs-row"><div class="k">决策依据</div><div class="v">期望值、概率、风险收益比</div></div>
-        <div class="vs-row"><div class="k">下注方式</div><div class="v">分散 + 凯利公式控制仓位</div></div>
-        <div class="vs-row"><div class="k">风险态度</div><div class="v">先算最坏情况，确保永不出局</div></div>
-        <div class="vs-row"><div class="k">结果分布</div><div class="v">长期分享经济增长的正期望</div></div>
-      </div>
+      <a class="sec-more" href="courses.html?sort=featured">更多推荐 →</a>
     </div>
-    <div class="vs-note reveal">关键反转：<b>赌场靠「微弱正期望 × 海量重复」稳定赚钱</b> —— 这套数学对投资者同样成立，只是要把角色换过来。</div>
+    <div class="card-grid" id="featGrid"></div>
   </div>
 </section>
 
-<!-- ============ 七大模块流程 ============ -->
-<section id="roadmap">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">The Roadmap</div>
-      <h2>流程规划：七大<em>认知模块</em></h2>
-      <p>从认知觉醒到行为纪律的完整学习路径。<b>点击路线图上的任意节点</b>，查看该模块的图解、公式与行动建议。</p>
+<!-- ============ 名校巡礼 ============ -->
+<section class="sec" id="schools">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Universities</div>
+        <h2>QS <em>名校</em>巡礼</h2>
+        <p>收录 QS 世界大学排名前十的高校，课程持续扩充中。</p>
+      </div>
+      <a class="sec-more" href="universities.html">全部学校 →</a>
     </div>
-    <div class="roadmap-box reveal">
-      <svg viewBox="0 0 960 560" id="roadmapSvg">
-        <defs>
-          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="#f5c451"/>
-          </marker>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <!-- 连接路径 -->
-        <path class="flow-path" d="M130 90 H830 V310 H400" fill="none" stroke="#f5c451" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)" opacity=".85"/>
-        <!-- 节点由 roadmap.js 渲染 -->
-        <g id="nodesG"></g>
-      </svg>
-      <div class="progress-pill">已探索 <b id="visitedCount">0</b> / 7 个模块 · 点亮全部节点解锁完整认知框架</div>
-    </div>
+    <div class="card-grid" id="schoolGrid"></div>
   </div>
 </section>
 
-<!-- ============ 交互实验室 ============ -->
-<section id="lab">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Interactive Lab</div>
-      <h2>交互实验室：亲手<em>转动雪球</em></h2>
-      <p>理论不够直观？拖动滑块，亲眼看看复利与凯利公式如何在时间里放大结果。</p>
-    </div>
-    <div class="lab-tabs reveal">
-      <button class="lab-tab active" data-tab="compound">⏳ 复利引擎</button>
-      <button class="lab-tab" data-tab="kelly">🎯 凯利公式</button>
-    </div>
-
-    <!-- 复利计算器 -->
-    <div class="lab-panel show" id="tab-compound">
-      <div class="lab-grid">
-        <div class="lab-controls reveal">
-          <div class="ctrl">
-            <label>初始本金 <b id="vP">10,000 元</b></label>
-            <input type="range" id="inP" min="0" max="500000" step="1000" value="10000">
-          </div>
-          <div class="ctrl">
-            <label>每月定投 <b id="vM">2,000 元</b><small> 先投资后消费</small></label>
-            <input type="range" id="inM" min="0" max="20000" step="100" value="2000">
-          </div>
-          <div class="ctrl">
-            <label>年化收益率 <b id="vR">8%</b><small> 长期股权的历史中枢</small></label>
-            <input type="range" id="inR" min="1" max="20" step="0.5" value="8">
-          </div>
-          <div class="ctrl">
-            <label>投资年限 <b id="vN">25 年</b><small> 坡越长，雪球越大</small></label>
-            <input type="range" id="inN" min="3" max="40" step="1" value="25">
-          </div>
-          <div class="ctrl">
-            <label>年通胀假设 <b id="vI">2.5%</b><small> 侵蚀购买力的隐形税</small></label>
-            <input type="range" id="inI" min="0" max="6" step="0.1" value="2.5">
-          </div>
-        </div>
-        <div class="lab-chart reveal">
-          <h4>资产增长曲线</h4>
-          <div class="chart-sub">金色 = 名义资产 · 青色虚线 = 扣除通胀后的实际购买力 · 灰色 = 累计投入本金</div>
-          <svg id="compoundSvg" viewBox="0 0 720 340"></svg>
-          <div class="lab-results">
-            <div class="res"><div class="v green" id="rFinal">—</div><div class="k">期末总资产</div></div>
-            <div class="res"><div class="v" id="rInvested">—</div><div class="k">累计投入</div></div>
-            <div class="res"><div class="v" id="rProfit">—</div><div class="k">复利收益</div></div>
-            <div class="res"><div class="v" id="rDouble">—</div><div class="k">本金翻倍时间(72法则)</div></div>
-          </div>
-          <div class="legend">
-            <span><i style="background:#f5c451"></i>名义资产</span>
-            <span><i style="background:#2dd4bf"></i>实际购买力</span>
-            <span><i style="background:#5b6b85"></i>累计投入</span>
-          </div>
-        </div>
+<!-- ============ 最新图解 ============ -->
+<section class="sec" id="latest">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Latest Figures</div>
+        <h2>最近<em>上图</em></h2>
+        <p>各课程最新整理的知识点图解，点击即可进入图解浏览器（支持放大与切换）。</p>
       </div>
     </div>
-
-    <!-- 凯利计算器 -->
-    <div class="lab-panel" id="tab-kelly">
-      <div class="lab-grid">
-        <div class="lab-controls reveal">
-          <div class="ctrl">
-            <label>胜率 p <b id="vPk">60%</b><small> 长期盈利的概率</small></label>
-            <input type="range" id="inPk" min="10" max="90" step="1" value="60">
-          </div>
-          <div class="ctrl">
-            <label>赔率 b <b id="vBk">1.0</b><small> 平均盈利 / 平均亏损</small></label>
-            <input type="range" id="inBk" min="0.1" max="5" step="0.1" value="1">
-          </div>
-          <div class="kelly-verdict good" id="kVerdict"></div>
-        </div>
-        <div class="lab-chart reveal">
-          <h4>仓位 vs 长期增长率</h4>
-          <div class="chart-sub">凯利公式求解曲线峰值：f* = (bp − q) / b。越过峰值继续加注，长期增长率断崖式下跌——这就是「正期望也会破产」的数学证明。</div>
-          <svg id="kellySvg" viewBox="0 0 720 340"></svg>
-          <div class="lab-results">
-            <div class="res"><div class="v" id="kStar">—</div><div class="k">凯利最优仓位 f*</div></div>
-            <div class="res"><div class="v green" id="kHalf">—</div><div class="k">实战建议（半凯利）</div></div>
-            <div class="res"><div class="v red" id="kRuin">—</div><div class="k">满仓梭哈的下场</div></div>
-            <div class="res"><div class="v" id="kExp">—</div><div class="k">单局期望收益</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 认知自检 ============ -->
-<section id="quiz">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Quiz</div>
-      <h2>认知自检：三道题<em>检验掌握程度</em></h2>
-      <p>看完七大模块，来验证一下你的「科学投资」直觉是否已经上线。</p>
-    </div>
-    <div id="quizBox"></div>
-    <div class="quiz-score" id="quizScore"></div>
-  </div>
-</section>
-
-<!-- ============ 行动清单 ============ -->
-<section id="action">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Action</div>
-      <h2>普通人落地清单：<em>今天就能开始</em></h2>
-      <p>科学的投资不需要天赋，只需要规则。勾选你完成的项，看着进度条一点点长起来。</p>
-    </div>
-    <div class="checklist reveal" id="checklist"></div>
-    <div class="check-progress">已完成 <b id="checkCount">0</b> / 6 项 · <span id="cheer">滚雪球的第一步，是让雪球开始滚。</span></div>
-  </div>
-</section>
-
-<!-- ============ 延伸学习 ============ -->
-<section id="extend">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag">Go Deeper</div>
-      <h2>延伸学习：四条<em>深入路径</em></h2>
-      <p>七大模块是「地图」，下面一门课与三本书是「水源」。<b>点击任意卡片</b>查看核心要点、图解与入门建议。</p>
-    </div>
-    <div class="ext-grid reveal" id="extGrid"></div>
+    <div class="fig-grid" id="figGrid"></div>
   </div>
 </section>
 
 <!-- ============ 页脚 ============ -->
 <footer>
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="f-grid">
       <div>
-        <h5>关于本页</h5>
-        <p>本页面是将一堂 85 分钟的 MIT 硬核金融公开课视频《MIT 金融课精华整理｜85 分钟带你建立财富认知框架》（主题：把投资从赌博变成科学，让普通人也能实现财富滚雪球）蒸馏而成的交互式知识图谱。内容框架参考 MIT OpenCourseWare 金融课程体系（15.401 Finance Theory I / 18.S096 等）。</p>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台。按学校、学科、课程三级组织内容；每门课程以课程概述、知识点图解、章节结构呈现，只收录图解、不包含视频。内容整理自各校公开课程资料，仅用于学习交流。</p>
       </div>
       <div>
-        <h5>本页导览</h5>
+        <h5>浏览</h5>
         <p>
-          <a href="#thesis-sec">中心思想</a> · <a href="#compare">赌博 vs 科学</a> · <a href="#roadmap">七大模块</a><br>
-          <a href="#lab">交互实验室</a> · <a href="#quiz">认知自检</a> · <a href="#action">行动清单</a> · <a href="#extend">延伸学习</a>
+          <a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="index.html#disciplines">学科分类</a><br>
+          <a href="mit-finance.html">MIT 金融课 · 深度专题</a>
         </p>
       </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>数据模型开放：新增学校与课程只需扩展数据文件，图解渲染自动完成，结构随规模增长保持清晰。</p>
+      </div>
     </div>
-    <div class="disclaimer">免责声明：本页仅为公开课程内容的知识整理与可视化，不构成任何投资建议。市场有风险，历史收益不代表未来表现。请根据自身情况独立决策。</div>
+    <div class="disclaimer">免责声明：本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有；不构成任何投资或专业建议。如有异议请联系删除。</div>
   </div>
 </footer>
 
-<!-- ============ 弹窗 ============ -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal" id="modalBox">
-    <button class="m-close" id="modalClose" aria-label="关闭">✕</button>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
-<!-- ============ 脚本（按依赖顺序加载） ============ -->
-<script src="js/data.js"></script>
-<script src="js/diagrams.js"></script>
-<script src="js/roadmap.js"></script>
-<script src="js/lab.js"></script>
-<script src="js/quiz.js"></script>
-<script src="js/main.js"></script>
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
 </body>
 </html>

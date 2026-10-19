@@ -1,0 +1,364 @@
+- generic [active] [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]: MIT·FINANCE 蒸馏计划
+      - generic [ref=f3e5]:
+        - link "中心思想" [ref=f3e6] [cursor=pointer]:
+          - /url: "#thesis-sec"
+        - link "赌博 vs 科学" [ref=f3e7] [cursor=pointer]:
+          - /url: "#compare"
+        - link "七大模块" [ref=f3e8] [cursor=pointer]:
+          - /url: "#roadmap"
+        - link "交互实验室" [ref=f3e9] [cursor=pointer]:
+          - /url: "#lab"
+        - link "认知自检" [ref=f3e10] [cursor=pointer]:
+          - /url: "#quiz"
+        - link "行动清单" [ref=f3e11] [cursor=pointer]:
+          - /url: "#action"
+        - link "延伸学习" [ref=f3e12] [cursor=pointer]:
+          - /url: "#extend"
+      - generic [ref=f3e13]: 公开课内容整理 · 非投资建议
+  - banner [ref=f3e15]:
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]: 视频蒸馏 · MIT 金融课精华整理 · 85 分钟
+      - heading "把投资从 赌博 变成科学" [level=1] [ref=f3e19]: 把投资从赌博 变成科学
+      - paragraph [ref=f3e20]: 一堂 MIT 硬核金融课的认知框架：普通人如何用数学管理不确定性、 用时间让财富滚雪球。本页将 85 分钟视频蒸馏为 7 大认知模块 + 3 个交互实验室，每个节点都可以点。
+      - generic [ref=f3e21]:
+        - generic [ref=f3e22]:
+          - generic [ref=f3e23]: "7"
+          - generic [ref=f3e24]: 认知模块
+        - generic [ref=f3e25]:
+          - generic [ref=f3e26]: "3"
+          - generic [ref=f3e27]: 交互实验室
+        - generic [ref=f3e28]:
+          - generic [ref=f3e29]: "5"
+          - generic [ref=f3e30]: 核心公式
+        - generic [ref=f3e31]:
+          - generic [ref=f3e32]: "3"
+          - generic [ref=f3e33]: 自检测验
+      - generic [ref=f3e34]:
+        - link "开始探索七大模块 ↓" [ref=f3e35] [cursor=pointer]:
+          - /url: "#roadmap"
+        - link "直接玩交互实验室" [ref=f3e36] [cursor=pointer]:
+          - /url: "#lab"
+    - generic [ref=f3e37]:
+      - img "滚雪球复利动画" [ref=f3e38]:
+        - generic [ref=f3e43]: 小雪球 · 本金
+        - generic [ref=f3e44]: 巨球 · 复利
+      - generic [ref=f3e45]: 很湿的雪（正收益）× 很长的坡（时间）= 财富滚雪球
+  - generic [ref=f3e47]:
+    - generic [ref=f3e48]:
+      - generic [ref=f3e49]: Core Thesis
+      - heading [level=2] [ref=f3e50]:
+        - text: 这堂课只有一个
+        - emphasis [ref=f3e51]: 中心思想
+      - paragraph [ref=f3e52]: 如果 85 分钟只能记住一句话，那就是下面这句。三大支柱撑起整个「财富滚雪球」的认知框架。
+    - generic [ref=f3e53]:
+      - text: “
+      - generic [ref=f3e54]: 投资的本质，是用数学管理不确定性，然后让时间为复利工作。
+      - generic [ref=f3e55]: —— distilled from MIT Finance ·「Mathematics + $$ = Finance」
+    - generic [ref=f3e56]:
+      - generic [ref=f3e57] [cursor=pointer]:
+        - generic [ref=f3e58]: +
+        - generic [ref=f3e59]: ⏳
+        - heading "时间TIME" [level=3] [ref=f3e60]
+        - generic [ref=f3e61]: 复利只奖励「在场足够久」的人。巴菲特 99% 的财富是 50 岁之后赚到的。
+        - generic: 雪球要滚大，需要两个条件：很湿的雪（可持续的正收益率）和很长的坡（不中断的时间）。中途退出 = 雪球停下 = 奇迹不会发生。这就是为什么「开始得早」比「择时准」重要得多。
+      - generic [ref=f3e62] [cursor=pointer]:
+        - generic [ref=f3e63]: +
+        - generic [ref=f3e64]: 🎲
+        - heading "概率PROBABILITY" [level=3] [ref=f3e65]
+        - generic [ref=f3e66]: 单次结果靠运气，长期结果由期望值决定。大数定律是普通人最强大的盟友。
+        - generic: 赌场不怕你赢一次，只怕你不来——因为每一局它都有微弱正期望，重复足够多次，利润必然兑现。把赌场的逻辑反过来用在自己身上：只参与正期望的游戏，然后让重复次数说话。
+      - generic [ref=f3e67] [cursor=pointer]:
+        - generic [ref=f3e68]: +
+        - generic [ref=f3e69]: 🛡
+        - heading "风险RISK" [level=3] [ref=f3e70]
+        - generic [ref=f3e71]: 先求不亏，再求赚钱。风险管理的目标不是消除波动，而是避免毁灭。
+        - generic: 亏损 50% 需要赚 100% 才能回本——不对称的伤害是所有复利的头号杀手。所以科学的投资顺序永远是：先确定最坏情况能否承受，再讨论能赚多少。
+  - generic [ref=f3e73]:
+    - generic [ref=f3e74]:
+      - generic [ref=f3e75]: Gambling vs Science
+      - heading [level=2] [ref=f3e76]:
+        - text: 同一笔钱，两种
+        - emphasis [ref=f3e77]: 命运分岔
+      - paragraph [ref=f3e78]: 赌博和投资的区别，不在于「有没有风险」，而在于期望值与时间维度。点击任意一行，看看两种思维的真实差距。
+    - generic [ref=f3e79]:
+      - generic [ref=f3e80]:
+        - heading "🎰 赌博思维" [level=3] [ref=f3e81]
+        - generic [ref=f3e82]: GAMBLING · 封闭的负期望游戏
+        - generic [ref=f3e83] [cursor=pointer]:
+          - generic [ref=f3e84]: 时间观
+          - generic [ref=f3e85]: 追求一夜暴富，越快越好
+        - generic [ref=f3e86] [cursor=pointer]:
+          - generic [ref=f3e87]: 决策依据
+          - generic [ref=f3e88]: 感觉、消息、直觉、「内部渠道」
+        - generic [ref=f3e89] [cursor=pointer]:
+          - generic [ref=f3e90]: 下注方式
+          - generic [ref=f3e91]: 重仓押注，一把定输赢
+        - generic [ref=f3e92] [cursor=pointer]:
+          - generic [ref=f3e93]: 风险态度
+          - generic [ref=f3e94]: 忽略最坏情况，赌「不会那么巧」
+        - generic [ref=f3e95] [cursor=pointer]:
+          - generic [ref=f3e96]: 结果分布
+          - generic [ref=f3e97]: 长期必输——规则由对手设计
+      - generic [ref=f3e98]:
+        - heading "🔬 科学思维" [level=3] [ref=f3e99]
+        - generic [ref=f3e100]: INVESTING · 开放的正期望游戏
+        - generic [ref=f3e101] [cursor=pointer]:
+          - generic [ref=f3e102]: 时间观
+          - generic [ref=f3e103]: 愿意慢慢变富，让雪球滚 10 年
+        - generic [ref=f3e104] [cursor=pointer]:
+          - generic [ref=f3e105]: 决策依据
+          - generic [ref=f3e106]: 期望值、概率、风险收益比
+        - generic [ref=f3e107] [cursor=pointer]:
+          - generic [ref=f3e108]: 下注方式
+          - generic [ref=f3e109]: 分散 + 凯利公式控制仓位
+        - generic [ref=f3e110] [cursor=pointer]:
+          - generic [ref=f3e111]: 风险态度
+          - generic [ref=f3e112]: 先算最坏情况，确保永不出局
+        - generic [ref=f3e113] [cursor=pointer]:
+          - generic [ref=f3e114]: 结果分布
+          - generic [ref=f3e115]: 长期分享经济增长的正期望
+    - generic [ref=f3e116]: 关键反转：赌场靠「微弱正期望 × 海量重复」稳定赚钱 —— 这套数学对投资者同样成立，只是要把角色换过来。
+  - generic [ref=f3e118]:
+    - generic [ref=f3e119]:
+      - generic [ref=f3e120]: The Roadmap
+      - heading [level=2] [ref=f3e121]:
+        - text: 流程规划：七大
+        - emphasis [ref=f3e122]: 认知模块
+      - paragraph [ref=f3e123]: 从认知觉醒到行为纪律的完整学习路径。点击路线图上的任意节点，查看该模块的图解、公式与行动建议。
+    - generic [ref=f3e124]:
+      - img [ref=f3e125]:
+        - generic [ref=f3e127]:
+          - generic [ref=f3e128] [cursor=pointer]:
+            - generic [ref=f3e130]: "01"
+            - generic [ref=f3e131]: 认知觉醒
+            - generic [ref=f3e132]: 投资 ≠ 赌博
+            - generic [ref=f3e134]: ✓
+          - generic [ref=f3e135] [cursor=pointer]:
+            - generic [ref=f3e137]: "02"
+            - generic [ref=f3e138]: 时间的魔法
+            - generic [ref=f3e139]: 复利 · 滚雪球
+            - generic [ref=f3e141]: ✓
+          - generic [ref=f3e142] [cursor=pointer]:
+            - generic [ref=f3e144]: "03"
+            - generic [ref=f3e145]: 概率思维
+            - generic [ref=f3e146]: 期望值 · 大数定律
+            - generic [ref=f3e148]: ✓
+          - generic [ref=f3e149] [cursor=pointer]:
+            - generic [ref=f3e151]: "04"
+            - generic [ref=f3e152]: 风险量化
+            - generic [ref=f3e153]: 波动 ≠ 永久损失
+            - generic [ref=f3e155]: ✓
+          - generic [ref=f3e156] [cursor=pointer]:
+            - generic [ref=f3e158]: "05"
+            - generic [ref=f3e159]: 分散投资
+            - generic [ref=f3e160]: 唯一的免费午餐
+            - generic [ref=f3e162]: ✓
+          - generic [ref=f3e163] [cursor=pointer]:
+            - generic [ref=f3e165]: "06"
+            - generic [ref=f3e166]: 仓位管理
+            - generic [ref=f3e167]: 凯利公式
+            - generic [ref=f3e169]: ✓
+          - generic [ref=f3e170] [cursor=pointer]:
+            - generic [ref=f3e172]: "07"
+            - generic [ref=f3e173]: 行为纪律
+            - generic [ref=f3e174]: 做时间的朋友
+            - generic [ref=f3e176]: ✓
+      - generic [ref=f3e177]:
+        - text: 已探索
+        - generic [ref=f3e178]: "0"
+        - text: / 7 个模块 · 点亮全部节点解锁完整认知框架
+  - generic [ref=f3e180]:
+    - generic [ref=f3e181]:
+      - generic [ref=f3e182]: Interactive Lab
+      - heading [level=2] [ref=f3e183]:
+        - text: 交互实验室：亲手
+        - emphasis [ref=f3e184]: 转动雪球
+      - paragraph [ref=f3e185]: 理论不够直观？拖动滑块，亲眼看看复利与凯利公式如何在时间里放大结果。
+    - generic [ref=f3e186]:
+      - button "⏳ 复利引擎" [ref=f3e187] [cursor=pointer]
+      - button "🎯 凯利公式" [ref=f3e188] [cursor=pointer]
+    - generic [ref=f3e190]:
+      - generic [ref=f3e191]:
+        - generic [ref=f3e192]:
+          - generic [ref=f3e193]:
+            - text: 初始本金
+            - generic [ref=f3e194]: 10,000 元
+          - slider [ref=f3e195] [cursor=pointer]: "10000"
+        - generic [ref=f3e196]:
+          - generic [ref=f3e197]:
+            - text: 每月定投
+            - generic [ref=f3e198]: 2,000 元
+            - generic [ref=f3e199]: 先投资后消费
+          - slider [ref=f3e200] [cursor=pointer]: "2000"
+        - generic [ref=f3e201]:
+          - generic [ref=f3e202]:
+            - text: 年化收益率
+            - generic [ref=f3e203]: 8%
+            - generic [ref=f3e204]: 长期股权的历史中枢
+          - slider [ref=f3e205] [cursor=pointer]: "8"
+        - generic [ref=f3e206]:
+          - generic [ref=f3e207]:
+            - text: 投资年限
+            - generic [ref=f3e208]: 25 年
+            - generic [ref=f3e209]: 坡越长，雪球越大
+          - slider [ref=f3e210] [cursor=pointer]: "25"
+        - generic [ref=f3e211]:
+          - generic [ref=f3e212]:
+            - text: 年通胀假设
+            - generic [ref=f3e213]: 2.5%
+            - generic [ref=f3e214]: 侵蚀购买力的隐形税
+          - slider [ref=f3e215] [cursor=pointer]: "2.5"
+      - generic [ref=f3e216]:
+        - heading "资产增长曲线" [level=4] [ref=f3e217]
+        - generic [ref=f3e218]: 金色 = 名义资产 · 青色虚线 = 扣除通胀后的实际购买力 · 灰色 = 累计投入本金
+        - img [ref=f3e219]:
+          - generic [ref=f3e220]: "0"
+          - generic [ref=f3e221]: 49.4 万
+          - generic [ref=f3e222]: 98.8 万
+          - generic [ref=f3e223]: 148 万
+          - generic [ref=f3e224]: 198 万
+          - generic [ref=f3e230]: 198 万
+          - generic [ref=f3e231]: 0年
+          - generic [ref=f3e232]: 5年
+          - generic [ref=f3e233]: 10年
+          - generic [ref=f3e234]: 15年
+          - generic [ref=f3e235]: 20年
+          - generic [ref=f3e236]: 25年
+        - generic [ref=f3e237]:
+          - generic [ref=f3e238]:
+            - generic [ref=f3e239]: 198 万
+            - generic [ref=f3e240]: 期末总资产
+          - generic [ref=f3e241]:
+            - generic [ref=f3e242]: 61.0 万
+            - generic [ref=f3e243]: 累计投入
+          - generic [ref=f3e244]:
+            - generic [ref=f3e245]: 137 万
+            - generic [ref=f3e246]: 复利收益
+          - generic [ref=f3e247]:
+            - generic [ref=f3e248]: 9.0 年
+            - generic [ref=f3e249]: 本金翻倍时间(72法则)
+        - generic [ref=f3e250]:
+          - generic [ref=f3e251]: 名义资产
+          - generic [ref=f3e253]: 实际购买力
+          - generic [ref=f3e255]: 累计投入
+  - generic [ref=f3e258]:
+    - generic [ref=f3e259]:
+      - generic [ref=f3e260]: Quiz
+      - heading [level=2] [ref=f3e261]:
+        - text: 认知自检：三道题
+        - emphasis [ref=f3e262]: 检验掌握程度
+      - paragraph [ref=f3e263]: 看完七大模块，来验证一下你的「科学投资」直觉是否已经上线。
+    - generic [ref=f3e264]:
+      - generic [ref=f3e265]:
+        - generic [ref=f3e266]: Q1赌场能够长期稳定盈利的根本原因是？
+        - generic [ref=f3e267]:
+          - button "A. 赌场老板运气特别好" [ref=f3e268] [cursor=pointer]
+          - button "B. 每一局都有微弱正期望，靠大数定律海量重复" [ref=f3e269] [cursor=pointer]
+          - button "C. 赌徒普遍不够聪明" [ref=f3e270] [cursor=pointer]
+      - generic [ref=f3e271]:
+        - generic [ref=f3e272]: Q2年化收益 8%，按 72 法则大约多少年本金翻一倍？
+        - generic [ref=f3e273]:
+          - button "A. 约 9 年" [ref=f3e274] [cursor=pointer]
+          - button "B. 约 12 年" [ref=f3e275] [cursor=pointer]
+          - button "C. 约 7.2 年" [ref=f3e276] [cursor=pointer]
+      - generic [ref=f3e277]:
+        - generic [ref=f3e278]: Q3当你发现一个正期望的投资机会时，凯利公式建议你怎么做？
+        - generic [ref=f3e279]:
+          - button "A. 全部押上，趁热打铁" [ref=f3e280] [cursor=pointer]
+          - button "B. 按胜率与赔率计算最优仓位，并留足安全边际" [ref=f3e281] [cursor=pointer]
+          - button "C. 正期望不存在，不投资" [ref=f3e282] [cursor=pointer]
+  - generic [ref=f3e284]:
+    - generic [ref=f3e285]:
+      - generic [ref=f3e286]: Action
+      - heading [level=2] [ref=f3e287]:
+        - text: 普通人落地清单：
+        - emphasis [ref=f3e288]: 今天就能开始
+      - paragraph [ref=f3e289]: 科学的投资不需要天赋，只需要规则。勾选你完成的项，看着进度条一点点长起来。
+    - generic [ref=f3e290]:
+      - generic [ref=f3e291] [cursor=pointer]:
+        - generic [ref=f3e292]: ✓
+        - generic [ref=f3e293]: 算清自己的「正期望」来自哪里（企业成长 / 股息 / 利差）
+      - generic [ref=f3e294] [cursor=pointer]:
+        - generic [ref=f3e295]: ✓
+        - generic [ref=f3e296]: 设置一笔自动定投——发薪日先投资、后消费
+      - generic [ref=f3e297] [cursor=pointer]:
+        - generic [ref=f3e298]: ✓
+        - generic [ref=f3e299]: 为最大的一笔投资写下「最坏情况剧本」
+      - generic [ref=f3e300] [cursor=pointer]:
+        - generic [ref=f3e301]: ✓
+        - generic [ref=f3e302]: 建立股债（或跨资产）组合，设定每年再平衡日
+      - generic [ref=f3e303] [cursor=pointer]:
+        - generic [ref=f3e304]: ✓
+        - generic [ref=f3e305]: 卸载短线行情 App，把看盘频率降到每周一次
+      - generic [ref=f3e306] [cursor=pointer]:
+        - generic [ref=f3e307]: ✓
+        - generic [ref=f3e308]: 把投资原则打印出来，贴在每天看得见的地方
+    - generic [ref=f3e309]: 已完成 0 / 6 项 · 滚雪球的第一步，是让雪球开始滚。
+  - generic [ref=f3e311]:
+    - generic [ref=f3e312]:
+      - generic [ref=f3e313]: Go Deeper
+      - heading [level=2] [ref=f3e314]:
+        - text: 延伸学习：四条
+        - emphasis [ref=f3e315]: 深入路径
+      - paragraph [ref=f3e316]: 七大模块是「地图」，下面一门课与三本书是「水源」。点击任意卡片查看核心要点、图解与入门建议。
+    - generic [ref=f3e317]:
+      - generic [ref=f3e318] [cursor=pointer]:
+        - generic [ref=f3e319]: 🎓
+        - generic [ref=f3e320]:
+          - heading "MIT OCW · Finance Theory I" [level=3] [ref=f3e321]
+          - generic [ref=f3e322]: Prof. Andrew Lo · MIT Sloan 公开课
+          - generic [ref=f3e323]: 本页知识框架的源头：现值、债券、股权、组合、期权，一堂免费的世界级金融第一课。
+        - text: 查看详情 →
+      - generic [ref=f3e324] [cursor=pointer]:
+        - generic [ref=f3e325]: 📗
+        - generic [ref=f3e326]:
+          - heading "《战胜一切市场》" [level=3] [ref=f3e327]
+          - generic [ref=f3e328]: Edward Thorp · 凯利公式实战
+          - generic [ref=f3e329]: 从 MIT 算牌少年到量化投资之父：如何发现微弱优势，并用数学把它变成三十年复利。
+        - text: 查看详情 →
+      - generic [ref=f3e330] [cursor=pointer]:
+        - generic [ref=f3e331]: 📘
+        - generic [ref=f3e332]:
+          - heading "现代投资组合理论 MPT" [level=3] [ref=f3e333]
+          - generic [ref=f3e334]: Harry Markowitz · 1990 年诺贝尔经济学奖
+          - generic [ref=f3e335]: “分散是唯一的免费午餐”的数学出处：有效前沿、相关系数与均值-方差分析。
+        - text: 查看详情 →
+      - generic [ref=f3e336] [cursor=pointer]:
+        - generic [ref=f3e337]: 📙
+        - generic [ref=f3e338]:
+          - heading "《思考，快与慢》" [level=3] [ref=f3e339]
+          - generic [ref=f3e340]: Daniel Kahneman · 行为金融学
+          - generic [ref=f3e341]: 为什么懂了所有理论，你还是会在山顶追高、在山脚割肉——因为你的系统 1 劫持了系统 2。
+        - text: 查看详情 →
+  - contentinfo [ref=f3e342]:
+    - generic [ref=f3e343]:
+      - generic [ref=f3e344]:
+        - generic [ref=f3e345]:
+          - heading "关于本页" [level=5] [ref=f3e346]
+          - paragraph [ref=f3e347]: 本页面是将一堂 85 分钟的 MIT 硬核金融公开课视频《MIT 金融课精华整理｜85 分钟带你建立财富认知框架》（主题：把投资从赌博变成科学，让普通人也能实现财富滚雪球）蒸馏而成的交互式知识图谱。内容框架参考 MIT OpenCourseWare 金融课程体系（15.401 Finance Theory I / 18.S096 等）。
+        - generic [ref=f3e348]:
+          - heading "本页导览" [level=5] [ref=f3e349]
+          - paragraph [ref=f3e350]:
+            - link "中心思想" [ref=f3e351] [cursor=pointer]:
+              - /url: "#thesis-sec"
+            - text: ·
+            - link "赌博 vs 科学" [ref=f3e352] [cursor=pointer]:
+              - /url: "#compare"
+            - text: ·
+            - link "七大模块" [ref=f3e353] [cursor=pointer]:
+              - /url: "#roadmap"
+            - link "交互实验室" [ref=f3e354] [cursor=pointer]:
+              - /url: "#lab"
+            - text: ·
+            - link "认知自检" [ref=f3e355] [cursor=pointer]:
+              - /url: "#quiz"
+            - text: ·
+            - link "行动清单" [ref=f3e356] [cursor=pointer]:
+              - /url: "#action"
+            - text: ·
+            - link "延伸学习" [ref=f3e357] [cursor=pointer]:
+              - /url: "#extend"
+      - generic [ref=f3e358]: 免责声明：本页仅为公开课程内容的知识整理与可视化，不构成任何投资建议。市场有风险，历史收益不代表未来表现。请根据自身情况独立决策。

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学校详情 · 课程图解合集 - OpenCourseAtlas</title>
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body data-page="university">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
+    </div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+<div class="wrap-wide" id="schoolBody">
+  <div class="page-head">
+    <div class="crumb"><a href="index.html">首页</a> / <a href="universities.html">学校列表</a> / <span id="crumbSchool">学校</span></div>
+  </div>
+
+  <div class="school-hero">
+    <div class="sc-badge" id="sBadge"></div>
+    <div>
+      <h1 id="sName"></h1>
+      <div class="en" id="sEn"></div>
+      <p class="intro" id="sIntro"></p>
+      <div class="sc-stats" id="sMeta"></div>
+    </div>
+  </div>
+
+  <div class="sec-head" style="margin-top:48px">
+    <div>
+      <div class="sec-tag">Courses</div>
+      <h2>该校<em>图解课程</em></h2>
+      <p>按学科筛选，点击课程卡片查看概述、章节结构与全部知识点图解。</p>
+    </div>
+  </div>
+
+  <div class="tabs" id="discTabs"></div>
+  <div class="card-grid" id="courseGrid"></div>
+</div>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="f-grid">
+      <div>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。</p>
+      </div>
+      <div>
+        <h5>浏览</h5>
+        <p><a href="index.html">首页</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+      </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>新增学校只需扩展数据文件，页面结构自动适配。</p>
+      </div>
+    </div>
+    <div class="disclaimer">本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。</div>
+  </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
+</body>
+</html>

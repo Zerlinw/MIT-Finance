@@ -1,0 +1,198 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "OpenCourseAtlas 全球名校公开课图解库" [ref=f1e4] [cursor=pointer]:
+        - /url: index.html
+        - text: OpenCourseAtlas
+        - generic [ref=f1e5]: 全球名校公开课图解库
+      - generic [ref=f1e6]:
+        - link "首页" [ref=f1e7] [cursor=pointer]:
+          - /url: index.html
+        - link "学校" [ref=f1e8] [cursor=pointer]:
+          - /url: universities.html
+        - link "课程" [ref=f1e9] [cursor=pointer]:
+          - /url: courses.html
+        - link "最新图解" [ref=f1e10] [cursor=pointer]:
+          - /url: index.html#latest
+        - link "深度专题" [ref=f1e11] [cursor=pointer]:
+          - /url: mit-finance.html
+      - search [ref=f1e12]:
+        - generic [ref=f1e13]: 🔍
+        - textbox "搜索" [ref=f1e14]:
+          - /placeholder: 搜索课程 / 学校 / 学科…
+        - button "搜索" [ref=f1e15] [cursor=pointer]
+  - generic [ref=f1e16]:
+    - generic [ref=f1e17]:
+      - generic [ref=f1e18]:
+        - link "首页" [ref=f1e19] [cursor=pointer]:
+          - /url: index.html
+        - text: / 学校列表
+      - heading [level=1] [ref=f1e20]:
+        - text: QS
+        - emphasis [ref=f1e21]: 名校
+        - text: 图解课程
+      - paragraph [ref=f1e22]: 收录 QS 世界大学排名前十的高校。点击学校卡片，查看该校的学科分布与全部图解课程；部分学校的课程仍在整理中。
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - generic [ref=f1e25]: 🔍
+        - textbox "搜索学校" [ref=f1e26]:
+          - /placeholder: 搜索学校名称 / 简介…
+      - combobox "按学科筛选" [ref=f1e27] [cursor=pointer]:
+        - option "全部学科" [selected]
+        - option "计算机科学"
+        - option "数学"
+        - option "物理"
+        - option "经济与金融"
+        - option "工程"
+        - option "生物与医学"
+        - option "心理学"
+        - option "哲学与人文"
+      - combobox "按国家筛选" [ref=f1e28] [cursor=pointer]:
+        - option "全部国家/地区" [selected]
+        - option "美国"
+        - option "英国"
+        - option "瑞士"
+        - option "新加坡"
+    - generic [ref=f1e29]: 共 10 所学校
+    - generic [ref=f1e31]:
+      - 'link "MIT 麻省理工学院 Massachusetts Institute of Technology 以理工与科研立校的世界第一学府，OpenCourseWare（OCW）将数千门课程讲义、习题与考试题免费开放，是本平台绝大多数课程的源头。 QS #1 美国 5 门课程 30 张图解" [ref=f1e33] [cursor=pointer]':
+        - /url: university.html?id=mit
+        - generic [ref=f1e34]: MIT
+        - generic [ref=f1e35]:
+          - heading "麻省理工学院" [level=3] [ref=f1e36]
+          - generic [ref=f1e37]: Massachusetts Institute of Technology
+          - generic [ref=f1e38]: 以理工与科研立校的世界第一学府，OpenCourseWare（OCW）将数千门课程讲义、习题与考试题免费开放，是本平台绝大多数课程的源头。
+          - generic [ref=f1e39]:
+            - generic [ref=f1e40]: "QS #1"
+            - generic [ref=f1e41]: 美国
+            - generic [ref=f1e42]: 5 门课程
+            - generic [ref=f1e43]: 30 张图解
+      - 'link "IC 帝国理工学院 Imperial College London 专注科学、工程、医学与商科的英国研究型重镇，以跨学科训练和产业联系著称。 QS #2 英国 1 门课程 6 张图解" [ref=f1e45] [cursor=pointer]':
+        - /url: university.html?id=imperial
+        - generic [ref=f1e46]: IC
+        - generic [ref=f1e47]:
+          - heading "帝国理工学院" [level=3] [ref=f1e48]
+          - generic [ref=f1e49]: Imperial College London
+          - generic [ref=f1e50]: 专注科学、工程、医学与商科的英国研究型重镇，以跨学科训练和产业联系著称。
+          - generic [ref=f1e51]:
+            - generic [ref=f1e52]: "QS #2"
+            - generic [ref=f1e53]: 英国
+            - generic [ref=f1e54]: 1 门课程
+            - generic [ref=f1e55]: 6 张图解
+      - 'link "Oxford 牛津大学 University of Oxford 英语世界最古老的大学，导师制（Tutorial）与人文社科传统深厚，哲学、PPE 与数学均为王牌。 QS #3 英国 1 门课程 6 张图解" [ref=f1e57] [cursor=pointer]':
+        - /url: university.html?id=oxford
+        - generic [ref=f1e58]: Oxford
+        - generic [ref=f1e59]:
+          - heading "牛津大学" [level=3] [ref=f1e60]
+          - generic [ref=f1e61]: University of Oxford
+          - generic [ref=f1e62]: 英语世界最古老的大学，导师制（Tutorial）与人文社科传统深厚，哲学、PPE 与数学均为王牌。
+          - generic [ref=f1e63]:
+            - generic [ref=f1e64]: "QS #3"
+            - generic [ref=f1e65]: 英国
+            - generic [ref=f1e66]: 1 门课程
+            - generic [ref=f1e67]: 6 张图解
+      - 'link "Harvard 哈佛大学 Harvard University 美国历史最悠久的高等学府，CS50 是全球最受欢迎的编程入门课，积极心理学公开课影响千万人。 QS #4 美国 2 门课程 12 张图解" [ref=f1e69] [cursor=pointer]':
+        - /url: university.html?id=harvard
+        - generic [ref=f1e70]: Harvard
+        - generic [ref=f1e71]:
+          - heading "哈佛大学" [level=3] [ref=f1e72]
+          - generic [ref=f1e73]: Harvard University
+          - generic [ref=f1e74]: 美国历史最悠久的高等学府，CS50 是全球最受欢迎的编程入门课，积极心理学公开课影响千万人。
+          - generic [ref=f1e75]:
+            - generic [ref=f1e76]: "QS #4"
+            - generic [ref=f1e77]: 美国
+            - generic [ref=f1e78]: 2 门课程
+            - generic [ref=f1e79]: 12 张图解
+      - 'link "Cambridge 剑桥大学 University of Cambridge 与牛津齐名的英国双璧，自然科学 Tripos 体系以广度与深度并重闻名，牛顿、图灵曾在此求学。 QS #5 英国 1 门课程 6 张图解" [ref=f1e81] [cursor=pointer]':
+        - /url: university.html?id=cambridge
+        - generic [ref=f1e82]: Cambridge
+        - generic [ref=f1e83]:
+          - heading "剑桥大学" [level=3] [ref=f1e84]
+          - generic [ref=f1e85]: University of Cambridge
+          - generic [ref=f1e86]: 与牛津齐名的英国双璧，自然科学 Tripos 体系以广度与深度并重闻名，牛顿、图灵曾在此求学。
+          - generic [ref=f1e87]:
+            - generic [ref=f1e88]: "QS #5"
+            - generic [ref=f1e89]: 英国
+            - generic [ref=f1e90]: 1 门课程
+            - generic [ref=f1e91]: 6 张图解
+      - 'link "Stanford 斯坦福大学 Stanford University 硅谷的智力引擎，CS229 机器学习公开课是无数算法工程师的启蒙，创业文化浓厚。 QS #6 美国 2 门课程 12 张图解" [ref=f1e93] [cursor=pointer]':
+        - /url: university.html?id=stanford
+        - generic [ref=f1e94]: Stanford
+        - generic [ref=f1e95]:
+          - heading "斯坦福大学" [level=3] [ref=f1e96]
+          - generic [ref=f1e97]: Stanford University
+          - generic [ref=f1e98]: 硅谷的智力引擎，CS229 机器学习公开课是无数算法工程师的启蒙，创业文化浓厚。
+          - generic [ref=f1e99]:
+            - generic [ref=f1e100]: "QS #6"
+            - generic [ref=f1e101]: 美国
+            - generic [ref=f1e102]: 2 门课程
+            - generic [ref=f1e103]: 12 张图解
+      - 'link "ETH 苏黎世联邦理工学院 ETH Zürich 欧洲大陆理工科排名第一的高校，爱因斯坦的母校，以严谨的物理与数学训练著称。 QS #7 瑞士 1 门课程 6 张图解" [ref=f1e105] [cursor=pointer]':
+        - /url: university.html?id=eth
+        - generic [ref=f1e106]: ETH
+        - generic [ref=f1e107]:
+          - heading "苏黎世联邦理工学院" [level=3] [ref=f1e108]
+          - generic [ref=f1e109]: ETH Zürich
+          - generic [ref=f1e110]: 欧洲大陆理工科排名第一的高校，爱因斯坦的母校，以严谨的物理与数学训练著称。
+          - generic [ref=f1e111]:
+            - generic [ref=f1e112]: "QS #7"
+            - generic [ref=f1e113]: 瑞士
+            - generic [ref=f1e114]: 1 门课程
+            - generic [ref=f1e115]: 6 张图解
+      - 'link "NUS 新加坡国立大学 National University of Singapore 亚洲排名第一的综合性大学，数据科学与计算机课程对全球学习者高度开放。 QS #8 新加坡 1 门课程 6 张图解" [ref=f1e117] [cursor=pointer]':
+        - /url: university.html?id=nus
+        - generic [ref=f1e118]: NUS
+        - generic [ref=f1e119]:
+          - heading "新加坡国立大学" [level=3] [ref=f1e120]
+          - generic [ref=f1e121]: National University of Singapore
+          - generic [ref=f1e122]: 亚洲排名第一的综合性大学，数据科学与计算机课程对全球学习者高度开放。
+          - generic [ref=f1e123]:
+            - generic [ref=f1e124]: "QS #8"
+            - generic [ref=f1e125]: 新加坡
+            - generic [ref=f1e126]: 1 门课程
+            - generic [ref=f1e127]: 6 张图解
+      - 'link "UCL 伦敦大学学院 University College London 神经科学与心理学的学术重镇，UCL 神经科学公开课以严谨和可视化解剖图谱闻名。 QS #9 英国 0 门课程 0 张图解" [ref=f1e129] [cursor=pointer]':
+        - /url: university.html?id=ucl
+        - generic [ref=f1e130]: UCL
+        - generic [ref=f1e131]:
+          - heading "伦敦大学学院" [level=3] [ref=f1e132]
+          - generic [ref=f1e133]: University College London
+          - generic [ref=f1e134]: 神经科学与心理学的学术重镇，UCL 神经科学公开课以严谨和可视化解剖图谱闻名。
+          - generic [ref=f1e135]:
+            - generic [ref=f1e136]: "QS #9"
+            - generic [ref=f1e137]: 英国
+            - generic [ref=f1e138]: 0 门课程
+            - generic [ref=f1e139]: 0 张图解
+      - 'link "Caltech 加州理工学院 California Institute of Technology 规模精小而科研密度极高的理工院校，费曼《物理学讲义》源于此，是物理图解学习的圣地。 QS #10 美国 0 门课程 0 张图解" [ref=f1e141] [cursor=pointer]':
+        - /url: university.html?id=caltech
+        - generic [ref=f1e142]: Caltech
+        - generic [ref=f1e143]:
+          - heading "加州理工学院" [level=3] [ref=f1e144]
+          - generic [ref=f1e145]: California Institute of Technology
+          - generic [ref=f1e146]: 规模精小而科研密度极高的理工院校，费曼《物理学讲义》源于此，是物理图解学习的圣地。
+          - generic [ref=f1e147]:
+            - generic [ref=f1e148]: "QS #10"
+            - generic [ref=f1e149]: 美国
+            - generic [ref=f1e150]: 0 门课程
+            - generic [ref=f1e151]: 0 张图解
+  - contentinfo [ref=f1e152]:
+    - generic [ref=f1e153]:
+      - generic [ref=f1e154]:
+        - generic [ref=f1e155]:
+          - heading "关于 OpenCourseAtlas" [level=5] [ref=f1e156]
+          - paragraph [ref=f1e157]: 专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。
+        - generic [ref=f1e158]:
+          - heading "浏览" [level=5] [ref=f1e159]
+          - paragraph [ref=f1e160]:
+            - link "首页" [ref=f1e161] [cursor=pointer]:
+              - /url: index.html
+            - text: ·
+            - link "课程列表" [ref=f1e162] [cursor=pointer]:
+              - /url: courses.html
+            - text: ·
+            - link "深度专题" [ref=f1e163] [cursor=pointer]:
+              - /url: mit-finance.html
+        - generic [ref=f1e164]:
+          - heading "内容扩展" [level=5] [ref=f1e165]
+          - paragraph [ref=f1e166]: 新增学校只需扩展数据文件，页面结构自动适配。
+      - generic [ref=f1e167]: 本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。

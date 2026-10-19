@@ -1,0 +1,4 @@
+[      29ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at Object.renderCourse [as course] (http://localhost:8899/js/platform.js:341:37)
+    at http://localhost:8899/js/platform.js:563:18
+    at http://localhost:8899/js/platform.js:566:3

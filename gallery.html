@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图解浏览 - OpenCourseAtlas</title>
+<meta name="description" content="知识点图解浏览器：支持放大、缩小、拖动平移、键盘切换与全屏阅读。">
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body data-page="gallery">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><b>OpenCourse</b>Atlas<small>全球名校公开课图解库</small></a>
+    <div class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="universities.html" data-nav="universities">学校</a>
+      <a href="courses.html" data-nav="courses">课程</a>
+      <a href="index.html#latest">最新图解</a>
+      <a href="mit-finance.html">深度专题</a>
+    </div>
+    <form class="nav-search" role="search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="搜索课程 / 学校 / 学科…" aria-label="搜索">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+<div class="wrap-wide" id="galleryBody">
+  <div class="page-head" style="padding-bottom:0">
+    <div class="crumb"><a href="index.html">首页</a> / 图解浏览</div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <button class="g-btn wide" id="gSideToggle">☰ 图解目录</button>
+  </div>
+
+  <div class="gallery-layout">
+    <!-- 目录侧栏 -->
+    <aside class="g-side" id="gSide">
+      <h4>当前课程</h4>
+      <div style="font-size:16px;font-weight:800;margin-bottom:2px" id="gCourseTitle"></div>
+      <div style="font-size:12.5px;color:var(--muted);margin-bottom:10px" id="gCourseSub"></div>
+      <div class="g-progress"><i id="gProgress" style="width:0%"></i></div>
+      <h4>图解目录</h4>
+      <div id="gSideList"></div>
+    </aside>
+
+    <!-- 主视图 -->
+    <div class="g-viewer" id="gViewer">
+      <div class="g-top">
+        <div class="loc" id="gLoc"></div>
+        <div class="g-tools">
+          <button class="g-btn" id="gZoomOut" title="缩小 (−)">−</button>
+          <div class="g-zoomval" id="gZoomVal">100%</div>
+          <button class="g-btn" id="gZoomIn" title="放大 (+)">＋</button>
+          <button class="g-btn" id="gZoomReset" title="重置视图 (0)">⟳</button>
+          <button class="g-btn" id="gFull" title="全屏阅读">⛶</button>
+        </div>
+      </div>
+
+      <div class="g-stage" id="gStage">
+        <div class="g-stage-inner" id="gStageInner"></div>
+      </div>
+
+      <div class="g-info">
+        <div class="fig-title" id="gFigTitle"></div>
+        <div class="fig-cap" id="gFigCap"></div>
+        <div class="fig-explain" id="gFigExplain"></div>
+      </div>
+
+      <div class="g-nav">
+        <a class="prev" id="gPrev" href="#">← 上一张</a>
+        <span class="chip chip-disc" id="gCounter" style="align-self:center"></span>
+        <a class="next" id="gNext" href="#">下一张 →</a>
+      </div>
+      <div class="g-hint">
+        <kbd>←</kbd> <kbd>→</kbd> 切换图解 · <kbd>+</kbd> <kbd>−</kbd> 缩放 · <kbd>0</kbd> 重置 ·
+        <kbd>Ctrl</kbd>+滚轮 缩放 · 双击 放大 · 拖动 平移
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="f-grid">
+      <div>
+        <h5>关于 OpenCourseAtlas</h5>
+        <p>专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。</p>
+      </div>
+      <div>
+        <h5>浏览</h5>
+        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+      </div>
+      <div>
+        <h5>内容扩展</h5>
+        <p>新增图解只需扩展数据文件，浏览器自动支持。</p>
+      </div>
+    </div>
+    <div class="disclaimer">本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。</div>
+  </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog-figures.js"></script>
+<script src="js/diagram-lib.js"></script>
+<script src="js/platform.js"></script>
+</body>
+</html>

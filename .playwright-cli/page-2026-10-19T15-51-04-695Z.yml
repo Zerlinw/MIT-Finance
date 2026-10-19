@@ -1,0 +1,165 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "OpenCourseAtlas 全球名校公开课图解库" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - text: OpenCourseAtlas
+        - generic [ref=e5]: 全球名校公开课图解库
+      - generic [ref=e6]:
+        - link "首页" [ref=e7] [cursor=pointer]:
+          - /url: index.html
+        - link "学校" [ref=e8] [cursor=pointer]:
+          - /url: universities.html
+        - link "课程" [ref=e9] [cursor=pointer]:
+          - /url: courses.html
+        - link "最新图解" [ref=e10] [cursor=pointer]:
+          - /url: index.html#latest
+        - link "深度专题" [ref=e11] [cursor=pointer]:
+          - /url: mit-finance.html
+      - search [ref=e12]:
+        - generic [ref=e13]: 🔍
+        - textbox "搜索" [ref=e14]:
+          - /placeholder: 搜索课程 / 学校 / 学科…
+        - button "搜索" [ref=e15] [cursor=pointer]
+  - generic [ref=e16]:
+    - generic [ref=e18]:
+      - link "首页" [ref=e19] [cursor=pointer]:
+        - /url: index.html
+      - text: /
+      - link "学校列表" [ref=e20] [cursor=pointer]:
+        - /url: universities.html
+      - text: /
+      - link "麻省理工学院" [ref=e21] [cursor=pointer]:
+        - /url: university.html?id=mit
+      - text: / 线性代数
+    - img [aria-hidden] [ref=e24]:
+      - generic [ref=e34]: "18.06"
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "课程概述" [level=3] [ref=e38]
+          - paragraph [ref=e39]: Gilbert Strang 教授的线性代数被全球数百万人学习。课程的核心洞见是：矩阵不是数字表格，而是「空间的变换」。理解了这一点，解方程、降维、数据压缩都会变成几何直觉。
+          - list [ref=e40]:
+            - listitem [ref=e41]: ✓ 用「列空间的视角」重新理解矩阵乘法与 Ax=b
+            - listitem [ref=e42]: ✓ 掌握四大基本子空间及其正交关系
+            - listitem [ref=e43]: ✓ 理解特征值/特征向量与五大矩阵分解
+            - listitem [ref=e44]: ✓ 看到 SVD 如何统一压缩、降维与推荐系统
+        - generic [ref=e46]:
+          - generic [ref=e47]: Chapters
+          - heading "章节结构" [level=2] [ref=e48]
+          - paragraph [ref=e49]: 课程按章节组织，每章包含若干知识点图解。点击章节展开，点击图解直接进入浏览。
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52] [cursor=pointer]:
+              - generic [ref=e53]: "01"
+              - generic [ref=e54]:
+                - heading "矩阵即变换" [level=3] [ref=e55]
+                - paragraph [ref=e56]: 向量、线性组合与矩阵乘法的几何意义。
+              - generic [ref=e57]: 2 张图解
+              - generic [ref=e58]: ▶
+            - generic [ref=e60]:
+              - link "01 矩阵即变换 矩阵不是数字表格，而是空间的变换" [ref=e61] [cursor=pointer]:
+                - /url: gallery.html?course=mit-18-06&fig=0
+                - generic [ref=e62]: "01"
+                - generic [ref=e63]:
+                  - text: 矩阵即变换
+                  - generic [ref=e64]: 矩阵不是数字表格，而是空间的变换
+              - link "02 解方程的两种视角 同一件事：把列向量组合出 b" [ref=e65] [cursor=pointer]:
+                - /url: gallery.html?course=mit-18-06&fig=1
+                - generic [ref=e66]: "02"
+                - generic [ref=e67]:
+                  - text: 解方程的两种视角
+                  - generic [ref=e68]: 同一件事：把列向量组合出 b
+          - generic [ref=e70] [cursor=pointer]:
+            - generic [ref=e71]: "02"
+            - generic [ref=e72]:
+              - heading "四大子空间" [level=3] [ref=e73]
+              - paragraph [ref=e74]: 列空间、零空间、行空间、左零空间。
+            - generic [ref=e75]: 2 张图解
+            - generic [ref=e76]: ▶
+          - generic [ref=e78] [cursor=pointer]:
+            - generic [ref=e79]: "03"
+            - generic [ref=e80]:
+              - heading "五大分解" [level=3] [ref=e81]
+              - paragraph [ref=e82]: LU、QR、特征分解、SVD、Cholesky 的用途地图。
+            - generic [ref=e83]: 1 张图解
+            - generic [ref=e84]: ▶
+        - link "开始浏览 5 张图解 ↓" [ref=e86] [cursor=pointer]:
+          - /url: gallery.html?course=mit-18-06&fig=0
+      - complementary [ref=e87]:
+        - generic [ref=e88]:
+          - heading "课程信息" [level=4] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]: 图解体数
+              - generic [ref=e93]: 5 张
+            - generic [ref=e94]:
+              - generic [ref=e95]: 章节数
+              - generic [ref=e96]: 3 章
+            - generic [ref=e97]:
+              - generic [ref=e98]: 预计阅读
+              - generic [ref=e99]: 160 分钟
+            - generic [ref=e100]:
+              - generic [ref=e101]: 难度
+              - generic [ref=e102]: 入门
+            - generic [ref=e103]:
+              - generic [ref=e104]: 先修要求
+              - generic [ref=e105]: 高中数学 + 愿意画图思考
+            - generic [ref=e106]:
+              - generic [ref=e107]: 资料来源
+              - generic [ref=e108]: MIT OpenCourseWare
+            - generic [ref=e109]:
+              - generic [ref=e110]: 最近更新
+              - generic [ref=e111]: 2026-07
+        - generic [ref=e112]:
+          - heading "开课学校" [level=4] [ref=e113]
+          - 'link "MIT 麻省理工学院 QS #1 · 5 门课程" [ref=e115] [cursor=pointer]':
+            - /url: university.html?id=mit
+            - generic [ref=e116]: MIT
+            - generic [ref=e117]:
+              - generic [ref=e118]: 麻省理工学院
+              - generic [ref=e119]: "QS #1 · 5 门课程"
+        - generic [ref=e120]:
+          - heading "相关课程" [level=4] [ref=e121]
+          - generic [ref=e122]:
+            - link "计算机科学导论与 Python 编程 MIT · 7 张图解" [ref=e123] [cursor=pointer]:
+              - /url: course.html?id=mit-6-0001
+              - generic [ref=e124]:
+                - generic [ref=e125]: 计算机科学导论与 Python 编程
+                - generic [ref=e126]: MIT · 7 张图解
+            - link "金融理论 I MIT · 6 张图解" [ref=e127] [cursor=pointer]:
+              - /url: course.html?id=mit-15-401
+              - generic [ref=e128]:
+                - generic [ref=e129]: 金融理论 I
+                - generic [ref=e130]: MIT · 6 张图解
+            - link "经典力学 MIT · 6 张图解" [ref=e131] [cursor=pointer]:
+              - /url: course.html?id=mit-8-01
+              - generic [ref=e132]:
+                - generic [ref=e133]: 经典力学
+                - generic [ref=e134]: MIT · 6 张图解
+            - link "微观经济学原理 MIT · 6 张图解" [ref=e135] [cursor=pointer]:
+              - /url: course.html?id=mit-14-01
+              - generic [ref=e136]:
+                - generic [ref=e137]: 微观经济学原理
+                - generic [ref=e138]: MIT · 6 张图解
+  - contentinfo [ref=e139]:
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - heading "关于 OpenCourseAtlas" [level=5] [ref=e143]
+          - paragraph [ref=e144]: 专注于 QS 知名高校公开课的图解合集平台，按学校、学科、课程三级组织，只收录图解、不包含视频。
+        - generic [ref=e145]:
+          - heading "浏览" [level=5] [ref=e146]
+          - paragraph [ref=e147]:
+            - link "学校列表" [ref=e148] [cursor=pointer]:
+              - /url: universities.html
+            - text: ·
+            - link "课程列表" [ref=e149] [cursor=pointer]:
+              - /url: courses.html
+            - text: ·
+            - link "深度专题" [ref=e150] [cursor=pointer]:
+              - /url: mit-finance.html
+        - generic [ref=e151]:
+          - heading "内容扩展" [level=5] [ref=e152]
+          - paragraph [ref=e153]: 新增课程只需扩展数据文件，页面结构自动适配。
+      - generic [ref=e154]: 本站为公开课程内容的知识整理与可视化，版权归原学校及授课教师所有，仅用于学习交流。
