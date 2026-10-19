@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify version consistency
+        run: npm run release:check
+
+      - name: Validate repository
+        run: npm run validate
+
+      - name: Build site
+        run: npm run build
+
+      - name: Package site
+        run: |
+          cd dist
+          zip -r "../opencourseatlas-${GITHUB_REF_NAME}.zip" .
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            "opencourseatlas-${GITHUB_REF_NAME}.zip" \
+            --title "OpenCourseAtlas ${GITHUB_REF_NAME}" \
+            --generate-notes \
+            --verify-tag

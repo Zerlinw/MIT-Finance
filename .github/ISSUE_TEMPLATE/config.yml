@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 贡献指南
+    url: https://github.com/Zerlinw/OpenCourseAtlas/blob/main/CONTRIBUTING.md
+    about: 提交前请先阅读环境准备、分支命名、提交规范与 PR 清单。
+  - name: 💬 使用与内容讨论
+    url: https://github.com/Zerlinw/OpenCourseAtlas/discussions
+    about: 使用问题、内容想法、展示与一般讨论请前往 Discussions。
+  - name: 🔐 安全漏洞
+    url: https://github.com/Zerlinw/OpenCourseAtlas/security/advisories/new
+    about: 请勿公开提交安全漏洞，使用私密漏洞报告。

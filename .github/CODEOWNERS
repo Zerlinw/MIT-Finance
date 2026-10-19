@@ -1,0 +1,13 @@
+# 默认负责人
+* @Zerlinw
+
+# 页面与交互
+/src/ @Zerlinw
+
+# 数据与渲染
+/assets/js/data/ @Zerlinw
+/assets/js/lib/ @Zerlinw
+
+# 文档与协作配置
+/docs/ @Zerlinw
+/.github/ @Zerlinw
