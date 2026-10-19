@@ -1,0 +1,46 @@
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors / IDE ----
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+*~
+.#*
+
+# ---- Node.js ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# ---- Build / preview ----
+dist/
+_site/
+.dev/
+.cache/
+tmp/
+temp/
+
+# ---- Test / automation artifacts ----
+.playwright-cli/
+test-results/
+playwright-report/
+blob-report/
+coverage/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+*.local
+
+# ---- Logs ----
+*.log

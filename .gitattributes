@@ -1,0 +1,27 @@
+# 统一文本换行与编码，避免跨平台协作产生无意义 diff
+* text=auto eol=lf
+
+*.html   text eol=lf
+*.css    text eol=lf
+*.js     text eol=lf
+*.mjs    text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.txt    text eol=lf
+*.svg    text eol=lf
+
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.ico    binary
+*.zip    binary
+*.woff   binary
+*.woff2  binary
+
+# 文档与协作配置不计入站点语言统计
+docs/**      linguist-documentation
+.github/**   linguist-documentation

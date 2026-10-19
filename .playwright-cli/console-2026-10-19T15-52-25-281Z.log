@@ -1,9 +1,0 @@
-[      27ms] TypeError: Cannot read properties of null (reading 'style')
-    at render (http://localhost:8899/js/platform.js:506:20)
-    at Object.renderGallery [as gallery] (http://localhost:8899/js/platform.js:546:3)
-    at http://localhost:8899/js/platform.js:563:18
-    at http://localhost:8899/js/platform.js:566:3
-[   76047ms] TypeError: Cannot read properties of null (reading 'style')
-    at render (http://localhost:8899/js/platform.js:506:20)
-    at go (http://localhost:8899/js/platform.js:525:14)
-    at HTMLDocument.<anonymous> (http://localhost:8899/js/platform.js:534:39)
