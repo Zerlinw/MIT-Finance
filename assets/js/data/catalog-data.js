@@ -1,6 +1,6 @@
 /* ============================================================
  * 平台数据层：学科 / 学校 / 课程 / 章节
- * 文件：js/catalog-data.js
+ * 文件：assets/js/data/catalog-data.js
  *
  * 数据模型（三级组织：学校 → 学科 → 课程）：
  *   DISCIPLINES  学科（分类维度）
@@ -168,7 +168,7 @@ const COURSES = [
   level:"进阶", levelKey:"intermediate", featured:true,
   tags:["现值","债券","组合","期权"],
   source:"MIT OpenCourseWare",
-  minutes:0, updated:"2026-09",
+  minutes:85, updated:"2026-09",
   deepLink:"mit-finance.html",
   overview:"MIT 斯隆王牌金融课，「Mathematics + $$ = Finance」是它的注脚。课程主线：现值关系 → 固定收益 → 股权 → 投资组合 → 期权定价。本平台为其配有深度专题图解页（七大认知模块 + 交互实验室）。",
   takeaways:[

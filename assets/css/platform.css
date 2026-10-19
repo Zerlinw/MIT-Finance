@@ -1,6 +1,6 @@
 /* ============================================================
    OpenCourseAtlas · 全球名校公开课图解库
-   样式文件：css/platform.css
+   样式文件：assets/css/platform.css
    沿用原站点深色主题（--bg #070b14 + 金 #f5c451 / 青 #2dd4bf）
    ============================================================ */
 
@@ -307,7 +307,7 @@ nav{
 .ch-head .cnt{font-size:12px;color:var(--muted);white-space:nowrap}
 .ch-head .arrow{color:var(--muted);transition:.3s;font-size:14px}
 .chapter.open .ch-head .arrow{transform:rotate(90deg);color:var(--gold)}
-.ch-body{display:none;padding:4px 22px 20px}
+.chapter .ch-body{display:none;padding:4px 22px 20px}
 .chapter.open .ch-body{display:block;animation:fadeIn .3s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .fig-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
