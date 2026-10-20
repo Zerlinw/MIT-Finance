@@ -9,6 +9,11 @@ desktop.ini
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json.example
+.fleet/
+.history/
+*.code-workspace
+*.suo
+*.user
 *.swp
 *~
 .#*
@@ -28,6 +33,9 @@ _site/
 .cache/
 tmp/
 temp/
+.netlify/
+.vercel/
+*.zip
 
 # ---- Test / automation artifacts ----
 .playwright-cli/
