@@ -15,7 +15,7 @@
 | Default branch | `main` |
 | Social preview | 使用首页截图（1280×640） |
 
-> 如果仓库仍叫 `MIT-Finance`，请先重命名。GitHub 会保留旧地址重定向，但本地 remote、徽章、文档链接需要同步：
+> 仓库规范名为 `OpenCourseAtlas`，本地 remote 应指向：
 >
 > ```bash
 > git remote set-url origin git@github.com:Zerlinw/OpenCourseAtlas.git

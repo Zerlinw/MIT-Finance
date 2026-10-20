@@ -27,7 +27,7 @@ main 分支
    https://<user>.github.io/OpenCourseAtlas/
    ```
 
-> 如果仓库仍使用旧名称（例如 `MIT-Finance`），请先在 **Settings → General → Repository name** 重命名为 `OpenCourseAtlas`。GitHub 会保留旧 URL 的重定向，但 Pages 地址、徽章与文档链接应以新名为准。
+> 仓库规范名为 `OpenCourseAtlas`，对应 Pages 地址 `https://zerlinw.github.io/OpenCourseAtlas/`。本地 `origin` 应指向 `git@github.com:Zerlinw/OpenCourseAtlas.git`。
 
 ### 工作流行为
 
@@ -39,9 +39,11 @@ main 分支
 | Setup Node | Node 20 |
 | `npm run validate` | 校验失败则不部署 |
 | `npm run build` | 生成 `dist/` |
-| `configure-pages` | 读取 Pages 配置 |
+| `configure-pages` | 读取配置；若 Pages 未启用则尝试自动启用（`enablement: true`） |
 | `upload-pages-artifact` | 上传 `dist/` |
 | `deploy-pages` | 发布并输出站点 URL |
+
+> 若组织策略禁止 Actions 自动启用 Pages，仍需按“首次配置”手动选择 **GitHub Actions** 作为 Source。
 
 触发条件：
 
