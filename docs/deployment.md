@@ -39,11 +39,12 @@ main 分支
 | Setup Node | Node 20 |
 | `npm run validate` | 校验失败则不部署 |
 | `npm run build` | 生成 `dist/` |
-| `configure-pages` | 读取配置；若 Pages 未启用则尝试自动启用（`enablement: true`） |
+| `Check Pages availability` | 检测 Pages 是否启用；未启用则跳过部署并输出警告 |
+| `configure-pages` | 读取 Pages 配置（仅启用后执行） |
 | `upload-pages-artifact` | 上传 `dist/` |
 | `deploy-pages` | 发布并输出站点 URL |
 
-> 若组织策略禁止 Actions 自动启用 Pages，仍需按“首次配置”手动选择 **GitHub Actions** 作为 Source。
+> `GITHUB_TOKEN` 无权创建 Pages 站点，因此首次必须在 **Settings → Pages** 手动启用；未启用时工作流仍会成功构建，但会跳过部署并给出警告。
 
 触发条件：
 
