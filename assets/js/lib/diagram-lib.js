@@ -35,6 +35,16 @@ const DiagramLib = (() => {
     .t{fill:${C.text};font-size:13px}.ts{fill:${C.sub};font-size:11px}
     .tt{fill:${C.strong};font-size:15px;font-weight:700}
     .tb{fill:${C.strong};font-size:12.5px;font-weight:700}
+    /* mark 交互标记点：金色脉冲圆点，编号 + 悬停光晕 */
+    .dlg-mark{cursor:pointer;outline:none}
+    .dlg-mark-halo{fill:rgba(245,196,81,.14);animation:dlgPulse 2.6s ease-in-out infinite}
+    .dlg-mark-dot{fill:rgba(7,11,20,.92);stroke:${C.gold};stroke-width:2;transition:stroke-width .18s}
+    .dlg-mark-num{fill:${C.gold};font-size:12px;font-weight:800;text-anchor:middle;pointer-events:none}
+    .dlg-mark:hover .dlg-mark-halo,.dlg-mark:focus-visible .dlg-mark-halo{r:24;fill:rgba(245,196,81,.22)}
+    .dlg-mark:hover .dlg-mark-dot,.dlg-mark:focus-visible .dlg-mark-dot{stroke-width:3.4}
+    .dlg-mark:focus-visible .dlg-mark-dot{stroke:#ffffff}
+    @keyframes dlgPulse{0%,100%{opacity:.5}50%{opacity:1}}
+    @media (prefers-reduced-motion: reduce){.dlg-mark-halo{animation:none;opacity:.8}}
   </style>
   <defs>
     <marker id="ag"  viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${C.gold}"/></marker>
@@ -374,10 +384,29 @@ const DiagramLib = (() => {
     return open("0 0 760 380") + s + `</svg>`;
   };
 
-  /* 统一入口：根据图解数据渲染 SVG 字符串 */
-  function render(fig){
+  /* mark 交互标记点层：坐标即该图 viewBox 坐标系，
+     随 gallery 的 CSS transform 缩放/平移同步变换 */
+  function marksLayer(fig){
+    const ms = fig?.marks;
+    if (!Array.isArray(ms) || !ms.length) return "";
+    let s = `<g class="dlg-marks" role="list" aria-label="交互标记点">`;
+    ms.forEach((mk, i) => {
+      s += `<g class="dlg-mark" data-i="${i}" role="button" tabindex="0" aria-label="${esc(mk.title || "标记点 " + (i+1))}" transform="translate(${+mk.x || 0} ${+mk.y || 0})">
+        <circle class="dlg-mark-halo" r="20"/>
+        <circle class="dlg-mark-dot" r="12"/>
+        <text class="dlg-mark-num" y="4">${i + 1}</text>
+      </g>`;
+    });
+    return s + `</g>`;
+  }
+
+  /* 统一入口：根据图解数据渲染 SVG 字符串
+   * render(fig, opts)：opts.marks === false 时关闭 mark 叠加层（用于缩略图） */
+  function render(fig, opts = {}){
     const fn = R[fig?.type] || R["cards"];
-    return fn(fig?.data || {});
+    const svg = fn(fig?.data || {});
+    if (opts.marks === false || !fig?.marks?.length) return svg;
+    return svg.replace(/<\/svg>\s*$/, "") + marksLayer(fig) + "</svg>";
   }
 
   /* 课程封面：由课程 id 生成确定性几何图案（无需外部图片） */

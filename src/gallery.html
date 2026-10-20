@@ -18,7 +18,6 @@
       <a href="universities.html" data-nav="universities">学校</a>
       <a href="courses.html" data-nav="courses">课程</a>
       <a href="index.html#latest">最新图解</a>
-      <a href="mit-finance.html">深度专题</a>
     </div>
     <form class="nav-search" role="search">
       <span class="s-ico">🔍</span>
@@ -44,8 +43,14 @@
       <div style="font-size:16px;font-weight:800;margin-bottom:2px" id="gCourseTitle"></div>
       <div style="font-size:12.5px;color:var(--muted);margin-bottom:10px" id="gCourseSub"></div>
       <div class="g-progress"><i id="gProgress" style="width:0%"></i></div>
+      <h4>深度筛选</h4>
+      <div class="g-depth" id="gDepthFilter"></div>
       <h4>图解目录</h4>
       <div id="gSideList"></div>
+      <div class="g-mark-panel" id="gMarkPanel">
+        <h4>标记点 <span class="cnt" id="gMarkCount"></span></h4>
+        <div id="gMarkList"></div>
+      </div>
     </aside>
 
     <!-- 主视图 -->
@@ -53,6 +58,7 @@
       <div class="g-top">
         <div class="loc" id="gLoc"></div>
         <div class="g-tools">
+          <button class="g-btn" id="gAdv" type="button" title="进阶模式：显示 L3/L4 深度标注">⚡</button>
           <button class="g-btn" id="gZoomOut" title="缩小 (−)">−</button>
           <div class="g-zoomval" id="gZoomVal">100%</div>
           <button class="g-btn" id="gZoomIn" title="放大 (+)">＋</button>
@@ -60,6 +66,15 @@
           <button class="g-btn" id="gFull" title="全屏阅读">⛶</button>
         </div>
       </div>
+
+      <section class="g-3d" id="g3d" aria-label="3D 核心心智模型">
+        <div class="g3d-head">
+          <span class="g3d-title" id="g3dTitle"></span>
+          <span class="g3d-hint" id="g3dHint"></span>
+        </div>
+        <div class="g3d-stage"><canvas id="g3dCanvas"></canvas></div>
+        <div class="g3d-foot" id="g3dFoot"></div>
+      </section>
 
       <div class="g-stage" id="gStage">
         <div class="g-stage-inner" id="gStageInner"></div>
@@ -69,6 +84,7 @@
         <div class="fig-title" id="gFigTitle"></div>
         <div class="fig-cap" id="gFigCap"></div>
         <div class="fig-explain" id="gFigExplain"></div>
+        <div class="fig-detail" id="gFigDetail"></div>
       </div>
 
       <div class="g-nav">
@@ -78,10 +94,25 @@
       </div>
       <div class="g-hint">
         <kbd>←</kbd> <kbd>→</kbd> 切换图解 · <kbd>+</kbd> <kbd>−</kbd> 缩放 · <kbd>0</kbd> 重置 ·
-        <kbd>Ctrl</kbd>+滚轮 缩放 · 双击 放大 · 拖动 平移
+        <kbd>Ctrl</kbd>+滚轮 缩放 · 双击 放大 · 拖动 平移 · <kbd>Tab</kbd> 遍历标记点
       </div>
     </div>
   </div>
+
+  <!-- mark 点详情卡 -->
+  <div class="mark-card-mask" id="gMarkMask" hidden></div>
+  <aside class="mark-card" id="gMarkCard" aria-hidden="true" role="dialog" aria-label="标记点详情">
+    <button class="mc-close" id="gMarkClose" aria-label="关闭详情">✕</button>
+    <div class="mc-no" id="gMarkNo">01</div>
+    <div class="mc-head">
+      <h4 id="gMarkTitle"></h4>
+      <span class="chip chip-depth" id="gMarkDepth"></span>
+    </div>
+    <p id="gMarkBody"></p>
+    <div class="mc-terms" id="gMarkTerms"></div>
+    <a class="mc-link" id="gMarkLink" href="#" hidden></a>
+    <div class="mc-tip">提示：按 <kbd>Esc</kbd> 关闭</div>
+  </aside>
 </div>
 
 <footer>
@@ -93,7 +124,7 @@
       </div>
       <div>
         <h5>浏览</h5>
-        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="course.html?id=mit-15-401">金融理论 I</a></p>
       </div>
       <div>
         <h5>内容扩展</h5>
@@ -106,7 +137,9 @@
 
 <script src="assets/js/data/catalog-data.js"></script>
 <script src="assets/js/data/catalog-figures.js"></script>
+<script src="assets/js/data/catalog-models.js"></script>
 <script src="assets/js/lib/diagram-lib.js"></script>
+<script src="assets/js/lib/scene3d-lib.js"></script>
 <script src="assets/js/platform.js"></script>
 </body>
 </html>

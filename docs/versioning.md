@@ -44,7 +44,7 @@ package.json → version
 | 变更 | 版本 | 示例 |
 | --- | --- | --- |
 | 破坏性 URL / 数据 Schema 变更 | **MAJOR** | 移除 `course.html`，重命名 `COURSES` 必填字段 |
-| 删除页面或公开数据字段 | **MAJOR** | 删除 `deepLink` 且不提供兼容 |
+| 删除页面或公开数据字段 | **MAJOR** | 删除 `deepPath` 且不提供兼容 |
 | 新页面、新交互、新筛选 | **MINOR** | 新增课程对比页 |
 | 新增学校 / 课程 / 学科 | **MINOR** | 新增剑桥数学课程 |
 | 新增图解类型 | **MINOR** | 新增 `radar` 渲染器 |

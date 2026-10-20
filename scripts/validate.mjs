@@ -175,15 +175,17 @@ pass(`JavaScript 语法检查通过（${jsFiles.length} 个文件）`);
 /* ------------------------------------------------------------------ */
 const dataPath = path.join(ASSETS, 'js/data/catalog-data.js');
 const figuresPath = path.join(ASSETS, 'js/data/catalog-figures.js');
+const modelsPath = path.join(ASSETS, 'js/data/catalog-models.js');
 const libraryPath = path.join(ASSETS, 'js/lib/diagram-lib.js');
 
 const dataCode = await readUtf8(dataPath);
 const figuresCode = await readUtf8(figuresPath);
+const modelsCode = await readUtf8(modelsPath);
 const sandbox = vm.createContext({ console });
 try {
   new vm.Script(
-    `${dataCode}\n${figuresCode}\n;globalThis.__atlas = { DISCIPLINES, SCHOOLS, LEVELS, COURSES, FIGURES };`,
-    { filename: 'catalog-data + catalog-figures' },
+    `${dataCode}\n${figuresCode}\n${modelsCode}\n;globalThis.__atlas = { DISCIPLINES, SCHOOLS, LEVELS, COURSES, FIGURES, MODELS };`,
+    { filename: 'catalog-data + catalog-figures + catalog-models' },
   ).runInContext(sandbox);
 } catch (error) {
   fail(`数据文件无法执行：${error.message}`);
@@ -194,6 +196,7 @@ if (!atlas) {
   fail('数据文件未导出预期变量，跳过后续数据校验');
 } else {
   const { DISCIPLINES, SCHOOLS, LEVELS, COURSES, FIGURES } = atlas;
+  const LAB_MODULES = new Set(['finance']);
 
   const requireFields = (item, fields, label) => {
     for (const field of fields) {
@@ -293,10 +296,14 @@ if (!atlas) {
       chapterIds.add(chapter.id);
     }
 
-    if (course.deepLink) {
-      const target = course.deepLink.split('#')[0].split('?')[0];
-      if (target && !existsSync(path.join(SRC, target))) {
-        fail(`课程 ${course.id} 的 deepLink 指向不存在的页面：${course.deepLink}`);
+    if (course.deepLink !== undefined) {
+      fail(`课程 ${course.id} 仍在使用已移除的 deepLink 字段（请改用 lab 字段标记交互实验室）`);
+    }
+    if (course.lab !== undefined) {
+      if (!LAB_MODULES.has(course.lab)) {
+        fail(`课程 ${course.id} 的 lab 不是已知交互实验室模块：${course.lab}`);
+      } else if (!existsSync(path.join(ASSETS, `js/finance-lab.js`))) {
+        fail(`课程 ${course.id} 声明了 lab 模块，但 assets/js/finance-lab.js 不存在`);
       }
     }
 
@@ -313,6 +320,7 @@ if (!atlas) {
   if (rendererTypes.size === 0) fail('未能在 diagram-lib.js 中识别图解类型注册表');
 
   let figureTotal = 0;
+  let markTotal = 0;
   for (const [courseId, figures] of Object.entries(FIGURES)) {
     if (!courseIds.has(courseId)) {
       fail(`FIGURES 中存在未知课程：${courseId}`);
@@ -345,12 +353,145 @@ if (!atlas) {
       if (typeof figure.data !== 'object' || figure.data === null || Array.isArray(figure.data)) {
         fail(`课程 ${courseId} 的图解 ${figure.id} 的 data 应为对象`);
       }
+      if (Array.isArray(figure.marks)) markTotal += figure.marks.length;
     }
   }
 
   pass(
     `数据模型完整：${SCHOOLS.length} 所学校 / ${COURSES.length} 门课程 / ` +
       `${figureTotal} 张图解 / ${DISCIPLINES.length} 个学科 / ${rendererTypes.size} 种图解`,
+  );
+
+  /* ------------------------------------------------------------------ */
+  /* 5.1 深度学习增强字段：detail / marks / MODELS / audience / deepPath  */
+  /* ------------------------------------------------------------------ */
+  const DEPTH_LEVELS = new Set(['L1', 'L2', 'L3', 'L4']);
+  const MODELS = atlas.MODELS || {};
+  const modelIds = new Set(Object.keys(MODELS));
+
+  for (const modelId of modelIds) {
+    const model = MODELS[modelId];
+    if (!model || typeof model !== 'object' || Array.isArray(model)) {
+      fail(`MODELS["${modelId}"] 应为对象`);
+      continue;
+    }
+    requireFields(model, ['title', 'camera', 'parts'], `MODELS["${modelId}"]`);
+    if (!Array.isArray(model.parts) || model.parts.length === 0) {
+      fail(`MODELS["${modelId}"] 的 parts 不能为空`);
+    }
+    const partIds = new Set();
+    for (const part of model.parts || []) {
+      requireFields(part, ['id', 'type', 'pos'], `MODELS["${modelId}"] 的部件`);
+      if (partIds.has(part.id)) fail(`MODELS["${modelId}"] 的部件 id 重复：${part.id}`);
+      partIds.add(part.id);
+      if (!Array.isArray(part.pos) || part.pos.length !== 3) {
+        fail(`MODELS["${modelId}"] 部件 ${part.id} 的 pos 应为 [x, y, z]`);
+      }
+    }
+    for (const mark of model.marks || []) {
+      requireFields(mark, ['id', 'at', 'title', 'body'], `MODELS["${modelId}"] 的 3D 锚点`);
+      if (!Array.isArray(mark.at) || mark.at.length !== 3) {
+        fail(`MODELS["${modelId}"] 锚点 ${mark.id} 的 at 应为 [x, y, z]`);
+      }
+      if (mark.depth && !DEPTH_LEVELS.has(mark.depth)) {
+        fail(`MODELS["${modelId}"] 锚点 ${mark.id} 的 depth 应为 L1-L4`);
+      }
+    }
+  }
+
+  for (const [courseId, figures] of Object.entries(FIGURES)) {
+    const model = MODELS[courseId];
+    const partIds = new Set((model?.parts || []).map((part) => part.id));
+    for (const figure of figures) {
+      const label = `课程 ${courseId} 的图解 ${figure.id}`;
+      const detail = figure.detail;
+      if (detail !== undefined) {
+        if (!detail || typeof detail !== 'object' || Array.isArray(detail)) {
+          fail(`${label} 的 detail 应为对象`);
+        } else {
+          requireFields(detail, ['lead', 'points'], `${label} 的 detail`);
+          if (detail.depth && !DEPTH_LEVELS.has(detail.depth)) {
+            fail(`${label} 的 detail.depth 应为 L1-L4`);
+          }
+          if (detail.model !== undefined && !modelIds.has(detail.model)) {
+            fail(`${label} 的 detail.model 指向不存在的 3D 模型：${detail.model}`);
+          }
+          if (detail.view !== undefined) {
+            const view = detail.view;
+            if (!view || typeof view !== 'object'
+                || !['yaw', 'pitch', 'dist'].every((key) => typeof view[key] === 'number')) {
+              fail(`${label} 的 detail.view 应包含数值型 yaw / pitch / dist`);
+            }
+          }
+          if (detail.focus !== undefined) {
+            if (!Array.isArray(detail.focus)) {
+              fail(`${label} 的 detail.focus 应为数组`);
+            } else {
+              for (const partId of detail.focus) {
+                if (!partIds.has(partId)) fail(`${label} 的 detail.focus 指向不存在的部件：${partId}`);
+              }
+            }
+          }
+          if (!Array.isArray(detail.points) || detail.points.length === 0) {
+            fail(`${label} 的 detail.points 不能为空`);
+          } else {
+            for (const point of detail.points) {
+              requireFields(point, ['title', 'body', 'depth'], `${label} 的知识点`);
+              if (!DEPTH_LEVELS.has(point.depth)) {
+                fail(`${label} 的知识点 depth 应为 L1-L4：${point.title}`);
+              }
+              if (point.terms !== undefined && !Array.isArray(point.terms)) {
+                fail(`${label} 的知识点 terms 应为数组`);
+              }
+            }
+          }
+        }
+      }
+      if (figure.marks !== undefined) {
+        if (!Array.isArray(figure.marks) || figure.marks.length === 0) {
+          fail(`${label} 的 marks 应为非空数组`);
+        } else {
+          for (const mark of figure.marks) {
+            requireFields(mark, ['x', 'y', 'title', 'body'], `${label} 的标记点`);
+            if (typeof mark.x !== 'number' || typeof mark.y !== 'number') {
+              fail(`${label} 的标记点 x / y 应为数值`);
+            } else {
+              if (mark.x < 0 || mark.x > 760) fail(`${label} 的标记点 x 超出图解坐标范围（0-760）：${mark.x}`);
+              if (mark.y < 0 || mark.y > 430) fail(`${label} 的标记点 y 超出图解坐标范围（0-430）：${mark.y}`);
+            }
+            if (mark.depth && !DEPTH_LEVELS.has(mark.depth)) {
+              fail(`${label} 的标记点 depth 应为 L1-L4`);
+            }
+            if (mark.link !== undefined && typeof mark.link !== 'string') {
+              fail(`${label} 的标记点 link 应为字符串`);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  for (const course of COURSES) {
+    if (course.audience !== undefined && typeof course.audience !== 'string') {
+      fail(`课程 ${course.id} 的 audience 应为字符串`);
+    }
+    if (course.deepPath !== undefined) {
+      if (!Array.isArray(course.deepPath) || course.deepPath.length !== 4) {
+        fail(`课程 ${course.id} 的 deepPath 应为 4 级数组`);
+      } else {
+        for (const step of course.deepPath) {
+          requireFields(step, ['level', 'label', 'desc'], `课程 ${course.id} 的 deepPath`);
+          if (!DEPTH_LEVELS.has(step.level)) {
+            fail(`课程 ${course.id} 的 deepPath level 应为 L1-L4`);
+          }
+        }
+      }
+    }
+    if (!modelIds.has(course.id)) warn(`课程 ${course.id} 尚未配置 3D 模型`);
+  }
+
+  pass(
+    `深度学习增强字段完整：${markTotal} 个交互标记点 / ${modelIds.size} 个 3D 模型`,
   );
 }
 

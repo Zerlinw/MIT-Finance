@@ -16,8 +16,11 @@ flowchart TD
   Page["src/*.html<br/>页面结构"] --> CSS["assets/css/platform.css<br/>主题与组件"]
   Page --> Platform["assets/js/platform.js<br/>页面渲染与交互"]
   Platform --> Data["assets/js/data/catalog-data.js<br/>学校 / 学科 / 课程 / 章节"]
-  Platform --> Figures["assets/js/data/catalog-figures.js<br/>图解数据"]
-  Figures --> Lib["assets/js/lib/diagram-lib.js<br/>SVG 渲染器"]
+  Platform --> Figures["assets/js/data/catalog-figures.js<br/>图解数据（含 detail / marks）"]
+  Platform --> Models["assets/js/data/catalog-models.js<br/>3D 心智模型场景"]
+  Figures --> Lib["assets/js/lib/diagram-lib.js<br/>SVG 渲染器 + mark 叠加层"]
+  Models --> Scene["assets/js/lib/scene3d-lib.js<br/>软件渲染 3D 引擎"]
+  Scene --> Canvas["DOM 中的 Canvas"]
   Lib --> SVG["DOM 中的 SVG"]
   Platform --> DOM["卡片 / 筛选 / 详情 / 图解浏览"]
   Data --> Platform
@@ -29,7 +32,8 @@ flowchart TD
 | 样式 | `assets/css/` | 主题变量、组件、响应式、动效 | 不依赖外部 CDN |
 | 交互 | `assets/js/platform.js` | 路由分发、筛选、渲染、URL 状态、图解浏览 | 不硬编码课程内容 |
 | 数据 | `assets/js/data/` | 学校、学科、课程、章节、图解 | 不操作 DOM |
-| 渲染 | `assets/js/lib/diagram-lib.js` | 把图解数据转为 SVG；生成课程封面 | 不发起网络请求 |
+| 渲染 | `assets/js/lib/diagram-lib.js` | 把图解数据转为 SVG；生成课程封面；叠加 mark 标记点层 | 不发起网络请求 |
+| 渲染 | `assets/js/lib/scene3d-lib.js` | 把 3D 模型数据软件渲染到 Canvas 2D | 不使用 WebGL / 外部资源 |
 | 运维 | `scripts/` | 本地预览、构建归集、校验、发布检查 | 不引入生产依赖 |
 | 自动化 | `.github/` | CI、Pages、Release、Issue/PR 模板 | 不存放业务代码 |
 
@@ -43,9 +47,8 @@ flowchart TD
 | `universities.html` | `universities` | 筛选状态同步到 URL | `renderUniversities()` |
 | `university.html` | `university` | `?id=<school>` | `renderUniversity()` |
 | `courses.html` | `courses` | `?q=&discipline=&school=&level=&sort=` | `renderCourses()` |
-| `course.html` | `course` | `?id=<course>` | `renderCourse()` |
+| `course.html` | `course` | `?id=<course>` | `renderCourse()`；`lab:"finance"` 课程额外按需加载 `finance-lab.js` 渲染实战实验室区块 |
 | `gallery.html` | `gallery` | `?course=<id>&fig=<index>` | `renderGallery()` |
-| `mit-finance.html` | — | — | `assets/js/legacy/*` |
 | `404.html` | `not-found` | — | 纯静态 |
 
 `platform.js` 末尾的分发逻辑：
@@ -68,18 +71,31 @@ bindReveal();
 ```html
 <script src="assets/js/data/catalog-data.js"></script>
 <script src="assets/js/data/catalog-figures.js"></script>
+<script src="assets/js/data/catalog-models.js"></script>
 <script src="assets/js/lib/diagram-lib.js"></script>
+<script src="assets/js/lib/scene3d-lib.js"></script>
 <script src="assets/js/platform.js"></script>
 ```
+
+> `gallery.html` 与 `course.html` 需要完整加载六个文件（3D 交互所需）；
+> 其余平台页面可省略 `catalog-models.js` 与 `scene3d-lib.js`，platform.js 通过
+> `typeof MODELS !== "undefined"` 等守卫安全降级。
+>
+> `assets/js/finance-lab.js` 不做静态引用：`renderCourse` 检测到课程 `lab` 字段时
+> 由 `loadScript()` 按需插入并调用 `FinanceLab.mount()`，其他课程页零额外请求。
 
 依赖关系：
 
 ```text
 catalog-data.js      定义 DISCIPLINES / SCHOOLS / LEVELS / COURSES
         ↓
-catalog-figures.js   定义 FIGURES（以课程 id 为键）
+catalog-figures.js   定义 FIGURES（以课程 id 为键，含 detail / marks）
+        ↓
+catalog-models.js    定义 MODELS（以课程 id 为键的 3D 场景）
         ↓
 diagram-lib.js       定义 DiagramLib.render / DiagramLib.cover
+        ↓
+scene3d-lib.js       定义 Scene3D.mount（零依赖软件渲染 3D 引擎）
         ↓
 platform.js          读取以上全局变量，渲染页面
 ```
@@ -109,11 +125,11 @@ platform.js          读取以上全局变量，渲染页面
 
 ```text
 src/                    页面源码，构建时复制到站点根目录
-assets/css/             平台与 legacy 样式
+assets/css/             平台样式（含课程级实验室组件）
 assets/img/             站点图标等静态图片
-assets/js/data/         数据层（纯数据，无 DOM）
-assets/js/lib/          图解渲染库
-assets/js/legacy/       MIT 金融深度专题页专用脚本（隔离）
+assets/js/data/         数据层（纯数据，无 DOM）：课程 / 图解 / 3D 模型
+assets/js/lib/          图解渲染库（SVG）与 3D 渲染引擎（Canvas）
+assets/js/finance-lab.js 金融课程交互实验室（lab 字段按需加载）
 assets/js/platform.js   平台交互入口
 scripts/                构建、预览、校验、发布检查
 docs/                   长期文档
@@ -140,6 +156,23 @@ R["flow"] = (d) => { /* ... */ };
 
 当前支持 14 种类型：`concept-map`、`flow`、`compare`、`layers`、`hierarchy`、`timeline`、`cycle`、`matrix`、`plot`、`tree`、`scale`、`bars`、`venn`、`cards`。未知类型回退到 `cards`。类型与数据形状见 [数据模型](data-model.md#图解类型)。
 
+`DiagramLib.render(fig, opts)` 在输出 SVG 尾部叠加 mark 标记点层（金色脉冲编号圆点，坐标即该图 viewBox 坐标系，天然继承 gallery 的缩放/平移变换）；`opts.marks === false` 时关闭叠加（用于首页缩略图等场景）。
+
+## 3D 渲染
+
+`scene3d-lib.js` 是零依赖软件渲染引擎：Canvas 2D + 透视投影 + 画家算法面排序，单场景三角形控制在千级，适合「几何示意类」心智模型（基向量变换、损失曲面、双缝实验等）。
+
+```js
+const controller = Scene3D.mount(canvas, model, { onPick, onHover });
+// controller: { setView, getView, focus, setAutoRotate, pause, resume, dispose }
+```
+
+- 模型完全数据化（`catalog-models.js` 的 `MODELS`），引擎不认识课程语义。
+- gallery 页顶部常驻「课程核心心智模型」舞台；切换图解时按 `detail.view` 同步机位、按 `detail.focus` 高亮部件。
+- 3D 锚点与 SVG mark 共用同一套详情卡组件；`?mark=k` 深链仅作用于 SVG mark。
+- 指针拖拽旋转（带惯性衰减）、滚轮缩放、自动旋转（尊重 `prefers-reduced-motion`）、重置视角。
+- ResizeObserver + devicePixelRatio 适配；页面隐藏时暂停渲染循环。
+
 ## 发布模型
 
 ```text
@@ -159,6 +192,8 @@ dist/           --(upload-pages-artifact)-->  GitHub Pages
 | 新增学校 / 课程 / 章节 | `assets/js/data/catalog-data.js` |
 | 新增图解 | `assets/js/data/catalog-figures.js` |
 | 新增图解类型 | `assets/js/lib/diagram-lib.js` 的 `R`，并更新数据模型文档 |
+| 新增 3D 模型 / 场景 | `assets/js/data/catalog-models.js` 追加场景；图解通过 `detail.model` / `view` / `focus` 关联 |
+| 新增课程级交互实验室 | 新建自包含脚本（参照 `finance-lab.js`）+ `COURSES.lab` 字段 + `validate.mjs` 白名单登记 |
 | 新增页面 | `src/<page>.html` + `platform.js` 渲染函数 + 分发表 + 导航 |
 | 新增筛选维度 | `platform.js` 的 URL 状态与筛选 UI；必要时扩展数据字段 |
 | 新增构建步骤 | `scripts/build.mjs`（保持零依赖，禁止引入打包器） |
@@ -172,14 +207,14 @@ dist/           --(upload-pages-artifact)-->  GitHub Pages
 - 视频托管、播放器或视频转码。
 - 前端框架、SSR、客户端路由库、打包器。
 - CMS 或在线编辑器；内容通过 PR 审核。
-- 运行时第三方依赖或外部 CDN 资源。
+- 运行时第三方依赖或外部 CDN 资源（3D 为自研软件渲染，不引入 three.js / glTF 加载器）。
 - 多语言站点（当前为中文）。
 
 ## 质量属性
 
 | 属性 | 现状与策略 |
 | --- | --- |
-| 性能 | 约 260 KiB 静态资源；1 个 CSS、4 个平台 JS；图解为内联 SVG，无图片请求 |
+| 性能 | 约 480 KiB 静态资源；1 个 CSS、6 个平台 JS；图解为内联 SVG，3D 为 Canvas 软件渲染，均无图片请求 |
 | 可访问性 | 语义化 `nav/main/section`、`aria-label`、键盘图解切换；持续补足焦点样式与对比度 |
 | 可维护性 | 数据/渲染/交互分层；统一数据校验；文档与代码同 PR 更新 |
 | 可移植性 | 相对路径、无服务端依赖；可部署到任意静态托管 |

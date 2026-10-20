@@ -18,7 +18,6 @@
       <a href="universities.html" data-nav="universities">学校</a>
       <a href="courses.html" data-nav="courses">课程</a>
       <a href="index.html#latest">最新图解</a>
-      <a href="mit-finance.html">深度专题</a>
     </div>
     <form class="nav-search" role="search">
       <span class="s-ico">🔍</span>
@@ -47,9 +46,22 @@
     </div>
   </div>
 
+  <section class="course-intro" id="cIntro"></section>
+
   <div class="course-layout">
     <div class="course-main">
       <div class="overview-box" id="cOverview"></div>
+
+      <section id="cModel" class="model-hero"></section>
+
+      <div class="sec-head" style="margin-top:44px">
+        <div>
+          <div class="sec-tag">Depth Path</div>
+          <h2>知识深度递进</h2>
+          <p>从概念到前沿的四级路径。点击任一深度下的图解，直接进入对应浏览位置；L3 / L4 为面向有基础学习者的进阶标注。</p>
+        </div>
+      </div>
+      <div class="deep-path" id="cDeepPath"></div>
 
       <div class="sec-head" style="margin-top:44px">
         <div>
@@ -59,6 +71,9 @@
         </div>
       </div>
       <div id="chapters"></div>
+
+      <!-- 课程级交互区块（lab 字段驱动，如金融实战实验室） -->
+      <div id="finSections"></div>
 
       <div style="text-align:center;margin:36px 0 10px" id="cCtaBottom"></div>
     </div>
@@ -89,7 +104,7 @@
       </div>
       <div>
         <h5>浏览</h5>
-        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="mit-finance.html">深度专题</a></p>
+        <p><a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="course.html?id=mit-15-401">金融理论 I</a></p>
       </div>
       <div>
         <h5>内容扩展</h5>
@@ -102,7 +117,9 @@
 
 <script src="assets/js/data/catalog-data.js"></script>
 <script src="assets/js/data/catalog-figures.js"></script>
+<script src="assets/js/data/catalog-models.js"></script>
 <script src="assets/js/lib/diagram-lib.js"></script>
+<script src="assets/js/lib/scene3d-lib.js"></script>
 <script src="assets/js/platform.js"></script>
 </body>
 </html>

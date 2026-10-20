@@ -18,7 +18,6 @@
       <a href="universities.html" data-nav="universities">学校</a>
       <a href="courses.html" data-nav="courses">课程</a>
       <a href="index.html#latest">最新图解</a>
-      <a href="mit-finance.html">深度专题</a>
     </div>
     <form class="nav-search" role="search">
       <span class="s-ico">🔍</span>
@@ -43,6 +42,8 @@
         <div class="hstat"><div class="v" id="statSchools">—</div><div class="k">收录学校</div></div>
         <div class="hstat"><div class="v" id="statCourses">—</div><div class="k">图解课程</div></div>
         <div class="hstat"><div class="v" id="statFigures">—</div><div class="k">知识点图解</div></div>
+        <div class="hstat"><div class="v" id="statMarks">—</div><div class="k">交互标记点</div></div>
+        <div class="hstat"><div class="v" id="stat3d">—</div><div class="k">3D 心智模型</div></div>
         <div class="hstat"><div class="v" id="statDisc">—</div><div class="k">覆盖学科</div></div>
       </div>
       <div class="cta-row">
@@ -50,16 +51,42 @@
         <a class="btn btn-ghost" href="universities.html">按学校探索</a>
       </div>
     </div>
-    <div class="hero-collage">
-      <div class="hc"><span class="ico">💻</span><b>计算机科学</b>从二进制到机器学习</div>
-      <div class="hc"><span class="ico">📐</span><b>数学</b>矩阵、极限与证明</div>
-      <div class="hc"><span class="ico">⚛️</span><b>物理</b>力学与量子世界</div>
-      <div class="hc"><span class="ico">📈</span><b>经济金融</b>供需、现值与风险</div>
-      <div class="hc"><span class="ico">🧠</span><b>心理学</b>幸福与心流</div>
-      <div class="hc"><span class="ico">🏛</span><b>哲学人文</b>论证与伦理学</div>
-    </div>
+    <div class="hero-collage" id="capGrid"></div>
   </header>
 </div>
+
+<!-- ============ 三步使用引导 ============ -->
+<section class="sec" id="guide">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">How it works</div>
+        <h2>三步<em>读懂本站</em></h2>
+        <p>为有基础的学习者设计：每张图解都可以点、可以转、有深度层次。</p>
+      </div>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="courses.html">
+        <div class="g-num">1</div>
+        <h3>选课程</h3>
+        <p>按学校、学科或难度筛选，找到与你已有基础匹配的课程。</p>
+        <span class="guide-link">浏览课程 →</span>
+      </a>
+      <a class="guide-card" href="course.html?id=mit-18-06">
+        <div class="g-num">2</div>
+        <h3>读图解</h3>
+        <p>点击金色标记点看细节解读，旋转 3D 心智模型，按需展开 L3/L4 进阶标注。</p>
+        <span class="guide-link">看示例 →</span>
+      </a>
+      <a class="guide-card" href="course.html?id=mit-15-401">
+        <div class="g-num">3</div>
+        <h3>深度进阶</h3>
+        <p>沿 L1 → L4 路径系统进阶，在实战实验室中动手验证复利与凯利公式。</p>
+        <span class="guide-link">金融实战实验室 →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ============ 学科分类入口 ============ -->
 <section class="sec" id="disciplines">
@@ -88,6 +115,20 @@
       <a class="sec-more" href="courses.html?sort=featured">更多推荐 →</a>
     </div>
     <div class="card-grid" id="featGrid"></div>
+  </div>
+</section>
+
+<!-- ============ 特色深度体验位（lab 字段数据驱动） ============ -->
+<section class="sec" id="feat-slot" hidden>
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Featured Lab</div>
+        <h2>特色<em>深度体验</em></h2>
+        <p>携带交互实验室的课程：把图解知识变成可以上手验证的决策框架。</p>
+      </div>
+    </div>
+    <div id="featSlotBox"></div>
   </div>
 </section>
 
@@ -132,7 +173,7 @@
         <h5>浏览</h5>
         <p>
           <a href="universities.html">学校列表</a> · <a href="courses.html">课程列表</a> · <a href="index.html#disciplines">学科分类</a><br>
-          <a href="mit-finance.html">MIT 金融课 · 深度专题</a>
+          <a href="course.html?id=mit-15-401">金融理论 I · 实战实验室</a>
         </p>
       </div>
       <div>
@@ -146,6 +187,7 @@
 
 <script src="assets/js/data/catalog-data.js"></script>
 <script src="assets/js/data/catalog-figures.js"></script>
+<script src="assets/js/data/catalog-models.js"></script>
 <script src="assets/js/lib/diagram-lib.js"></script>
 <script src="assets/js/platform.js"></script>
 </body>

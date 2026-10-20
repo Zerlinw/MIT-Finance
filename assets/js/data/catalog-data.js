@@ -84,6 +84,13 @@ const COURSES = [
     "形成「编写 → 运行 → 调试」的工程习惯"
   ],
   prereq:"无需编程基础",
+  audience:"适合已接触过任意一门编程语言、想系统补齐「计算思维」框架的学习者；零基础也可顺畅阅读。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"计算的五个角色与抽象阶梯：先建立整机视野" },
+    { level:"L2", label:"机制", desc:"程序结构、函数与模块的组织方式" },
+    { level:"L3", label:"关系与定量", desc:"复杂度量级与调试循环的成本结构" },
+    { level:"L4", label:"系统与前沿", desc:"从「会写代码」到像计算机科学家一样拆解问题" }
+  ],
   chapters:[
     { id:"c1", title:"计算的本质", summary:"从信息变换的角度理解计算机：输入、处理、输出与存储。" },
     { id:"c2", title:"计算思维", summary:"把大问题变小、把重复变模式、把细节变抽象的思维框架。" },
@@ -108,6 +115,13 @@ const COURSES = [
     "看到 SVD 如何统一压缩、降维与推荐系统"
   ],
   prereq:"高中数学 + 愿意画图思考",
+  audience:"适合学过矩阵运算但未建立几何直觉的学习者——本合集把 Strang 的「列空间视角」补全。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"矩阵即变换：把数字表格读成空间动作" },
+    { level:"L2", label:"机制", desc:"四大基本子空间与投影正交的工作方式" },
+    { level:"L3", label:"关系与定量", desc:"五大矩阵分解各自的适用条件与精度" },
+    { level:"L4", label:"系统与前沿", desc:"SVD 如何统一压缩、降维与推荐系统" }
+  ],
   chapters:[
     { id:"c1", title:"矩阵即变换", summary:"向量、线性组合与矩阵乘法的几何意义。" },
     { id:"c2", title:"四大子空间", summary:"列空间、零空间、行空间、左零空间。" },
@@ -131,6 +145,13 @@ const COURSES = [
     "理解简谐运动如何统一弹簧、单摆与轨道"
   ],
   prereq:"高中数学 + 基础微积分",
+  audience:"适合高中物理过一遍、希望把牛顿力学串成「守恒量优先」分析框架的学习者。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"描述运动的语言：位移、速度、加速度" },
+    { level:"L2", label:"机制", desc:"牛顿三定律与简谐运动的统一图景" },
+    { level:"L3", label:"关系与定量", desc:"功—能定理与动量守恒的互换与选择" },
+    { level:"L4", label:"系统与前沿", desc:"用守恒量预判复杂系统的演化方向" }
+  ],
   chapters:[
     { id:"c1", title:"运动与力", summary:"描述运动的语言与牛顿三定律。" },
     { id:"c2", title:"能量", summary:"功、动能、势能与守恒律。" },
@@ -154,6 +175,13 @@ const COURSES = [
     "用消费者/生产者剩余衡量市场福利"
   ],
   prereq:"无",
+  audience:"适合看过供需曲线但说不清「为什么」的学习者——本合集补齐曲线背后的激励逻辑。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"供需语言：把激励翻译成曲线" },
+    { level:"L2", label:"机制", desc:"价格机制如何协调分散决策" },
+    { level:"L3", label:"关系与定量", desc:"弹性传导、税收归宿与福利的面积度量" },
+    { level:"L4", label:"系统与前沿", desc:"市场失灵与政策设计的边界" }
+  ],
   chapters:[
     { id:"c1", title:"供需语言", summary:"需求曲线、供给曲线与市场均衡。" },
     { id:"c2", title:"弹性与政策", summary:"价格弹性、税收归宿与价格管制。" },
@@ -168,20 +196,31 @@ const COURSES = [
   level:"进阶", levelKey:"intermediate", featured:true,
   tags:["现值","债券","组合","期权"],
   source:"MIT OpenCourseWare",
-  minutes:85, updated:"2026-09",
-  deepLink:"mit-finance.html",
-  overview:"MIT 斯隆王牌金融课，「Mathematics + $$ = Finance」是它的注脚。课程主线：现值关系 → 固定收益 → 股权 → 投资组合 → 期权定价。本平台为其配有深度专题图解页（七大认知模块 + 交互实验室）。",
+  minutes:85, updated:"2026-10",
+  lab:"finance",
+  overview:"MIT 斯隆王牌金融课，「Mathematics + $$ = Finance」是它的注脚。课程主线：现值关系 → 固定收益 → 股权 → 投资组合 → 期权定价。在此之上，本课程还配有「投资认知框架」七大模块与实战实验室（复利引擎、凯利公式计算器、认知自检、行动清单），把估值数学延伸为一套可操作的科学决策框架。",
   takeaways:[
     "用现值（PV）统一比较不同时点的现金流",
     "理解债券定价与利率期限结构",
     "掌握风险—收益权衡与分散化数学",
-    "初识期权定价的复制与对冲思想"
+    "初识期权定价的复制与对冲思想",
+    "用七大认知模块建立「投资 ≠ 赌博」的科学决策框架",
+    "在实战实验室中亲手验证复利与凯利公式"
   ],
   prereq:"概率论基础",
+  audience:"适合学过基础概率、希望把「现值」变成直觉的学习者；期权部分只需定性理解。课程附实战实验室与认知自检，可直接上手验证。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"货币的时间价值：一切资产的共同尺度" },
+    { level:"L2", label:"机制", desc:"贴现因子、收益率曲线与利率的传导" },
+    { level:"L3", label:"关系与定量", desc:"风险—收益象限、凯利仓位与期权非线性的结构" },
+    { level:"L4", label:"系统与前沿", desc:"复制与对冲的无套利思想，以及行为纪律的系统视角" }
+  ],
   chapters:[
     { id:"c1", title:"现值关系", summary:"贴现、复利与利率的时间价值。" },
     { id:"c2", title:"固定收益与股权", summary:"债券定价与股权估值框架。" },
-    { id:"c3", title:"组合与期权", summary:"分散化的数学与期权定价直觉。" }
+    { id:"c3", title:"组合与期权", summary:"分散化的数学与期权定价直觉。" },
+    { id:"c4", title:"投资认知框架", summary:"七大认知模块：从认知觉醒到行为纪律的完整投资思维。" },
+    { id:"c5", title:"实战与延伸", summary:"行动清单、延伸学习与交互实验室入口。" }
   ]
 },
 {
@@ -201,6 +240,13 @@ const COURSES = [
     "用偏差—方差与交叉验证评估泛化能力"
   ],
   prereq:"线性代数 + 概率统计 + 编程",
+  audience:"适合跑过 sklearn 但未亲手推导过模型的学习者——本合集重建「模型—损失—优化」框架。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"学习范式地图：监督 / 无监督 / 强化" },
+    { level:"L2", label:"机制", desc:"监督学习流水线与梯度下降的工作方式" },
+    { level:"L3", label:"关系与定量", desc:"过拟合诊断与偏差—方差权衡的度量" },
+    { level:"L4", label:"系统与前沿", desc:"正则化作为归纳偏置的主动设计" }
+  ],
   chapters:[
     { id:"c1", title:"学习范式全景", summary:"监督、无监督与强化学习的地图。" },
     { id:"c2", title:"监督学习流水线", summary:"从数据到模型的六个环节。" },
@@ -224,6 +270,13 @@ const COURSES = [
     "了解 CPU、内存与程序的协作方式"
   ],
   prereq:"无",
+  audience:"适合会用电脑但不了解内部原理的学习者；学过编程者可将本合集当作系统观补全。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"比特如何编码数字、文本与图像" },
+    { level:"L2", label:"机制", desc:"排序与搜索两类基本算法的差异" },
+    { level:"L3", label:"关系与定量", desc:"数据结构与内存层次的代价地图" },
+    { level:"L4", label:"系统与前沿", desc:"CPU、内存与程序的协作全景" }
+  ],
   chapters:[
     { id:"c1", title:"比特的世界", summary:"二进制、编码与信息的度量。" },
     { id:"c2", title:"算法入门", summary:"搜索、排序与复杂度直觉。" },
@@ -247,6 +300,13 @@ const COURSES = [
     "独立完成一个完整的 Web 项目"
   ],
   prereq:"无",
+  audience:"适合完成过一门入门课、想横跨 C/Python/SQL/Web 建立完整系统观的学习者。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"从 Scratch 到 C 的抽象阶梯" },
+    { level:"L2", label:"机制", desc:"内存布局与数据结构的时间代价" },
+    { level:"L3", label:"关系与定量", desc:"哈希、查询与网络协议的工作方式" },
+    { level:"L4", label:"系统与前沿", desc:"独立完成一个完整的 Web 项目" }
+  ],
   chapters:[
     { id:"c1", title:"从 Scratch 到 C", summary:"计算思维与底层内存模型。" },
     { id:"c2", title:"数据结构", summary:"数组、链表、树、哈希表与它们的代价。" },
@@ -270,6 +330,13 @@ const COURSES = [
     "用「健康 perfectionism」替代病态苛求"
   ],
   prereq:"无",
+  audience:"适合读过零散心理学科普、希望用实证框架整理幸福认知的学习者。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"积极心理学的五个前提与幸福基准线" },
+    { level:"L2", label:"机制", desc:"心流通道与性格优势的运用条件" },
+    { level:"L3", label:"关系与定量", desc:"基准线理论与完美主义光谱的位置" },
+    { level:"L4", label:"系统与前沿", desc:"关系与意义的长期建设路径" }
+  ],
   chapters:[
     { id:"c1", title:"幸福是什么", summary:"积极心理学的五个前提与幸福基准线。" },
     { id:"c2", title:"优势与心流", summary:"VIA 性格优势与心流通道。" },
@@ -293,6 +360,13 @@ const COURSES = [
     "建立伦理学三大流派的判断框架"
   ],
   prereq:"无",
+  audience:"适合能读懂论证但缺少形式训练的学习者；本合集把哲学史还原为「论证结构」练习。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"前提—结论—有效性的逻辑骨架" },
+    { level:"L2", label:"机制", desc:"知识论中「确证」的核心问题" },
+    { level:"L3", label:"关系与定量", desc:"三大伦理流派各自的判断框架" },
+    { level:"L4", label:"系统与前沿", desc:"从意见到论证的思维习惯转换" }
+  ],
   chapters:[
     { id:"c1", title:"论证的艺术", summary:"前提、结论与有效性的逻辑基础。" },
     { id:"c2", title:"知识论", summary:"什么是知识：确证的真信念及其挑战。" },
@@ -316,6 +390,13 @@ const COURSES = [
     "体会不同数学语言描述同一对象的等价性"
   ],
   prereq:"高中数学",
+  audience:"适合分科学过代数、几何但未见其统一性的学习者；本合集展示三大分支的共通语言。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"三大分支各自的问题意识地图" },
+    { level:"L2", label:"机制", desc:"向量与线性空间作为统一语言" },
+    { level:"L3", label:"关系与定量", desc:"极限思想架起离散与连续之桥" },
+    { level:"L4", label:"系统与前沿", desc:"不同数学语言描述同一对象的等价性" }
+  ],
   chapters:[
     { id:"c1", title:"三大分支地图", summary:"代数、分析、几何各自的问题意识。" },
     { id:"c2", title:"统一语言", summary:"向量与线性空间如何沟通三大分支。" },
@@ -339,6 +420,13 @@ const COURSES = [
     "建立「失败—学习—再设计」的迭代心智"
   ],
   prereq:"无",
+  audience:"适合做过课程项目但缺少方法论的学习者；本合集把设计经验整理为可复用循环。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"设计循环五步：需求到迭代" },
+    { level:"L2", label:"机制", desc:"需求转译与系统边界分解" },
+    { level:"L3", label:"关系与定量", desc:"权衡矩阵与原型风险排序" },
+    { level:"L4", label:"系统与前沿", desc:"「失败—学习—再设计」的迭代心智" }
+  ],
   chapters:[
     { id:"c1", title:"设计循环", summary:"工程设计的五步闭环与迭代本质。" },
     { id:"c2", title:"需求与系统", summary:"从用户故事到系统分解的方法。" },
@@ -362,6 +450,13 @@ const COURSES = [
     "初识自旋、纠缠与量子技术前景"
   ],
   prereq:"微积分 + 基础物理",
+  audience:"适合科普层面了解量子、希望理解波函数语言的学习者；数学推导以定性为主。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"从经典物理的危机到波粒二象性" },
+    { level:"L2", label:"机制", desc:"波函数、概率幅与测量公设" },
+    { level:"L3", label:"关系与定量", desc:"不确定性原理的物理根源" },
+    { level:"L4", label:"系统与前沿", desc:"自旋、纠缠与量子技术前景" }
+  ],
   chapters:[
     { id:"c1", title:"波粒二象性", summary:"从经典物理的危机到量子假设。" },
     { id:"c2", title:"波函数与测量", summary:"概率幅语言与测量的坍缩公设。" },
@@ -385,6 +480,13 @@ const COURSES = [
     "完成一次完整的端到端数据分析"
   ],
   prereq:"无",
+  audience:"适合会 pandas 但缺少分析流程观的学习者；本合集补齐「提问—沟通」两端的闭环。",
+  deepPath:[
+    { level:"L1", label:"概念", desc:"分析流程与四种分析类型" },
+    { level:"L2", label:"机制", desc:"统计三特征与分布形状的读法" },
+    { level:"L3", label:"关系与定量", desc:"图表选择矩阵与数据讲故事" },
+    { level:"L4", label:"系统与前沿", desc:"完成端到端的数据分析闭环" }
+  ],
   chapters:[
     { id:"c1", title:"数据科学生态", summary:"数据科学的定位与分析流程。" },
     { id:"c2", title:"统计直觉", summary:"集中趋势、离散程度与分布形状。" },

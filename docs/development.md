@@ -71,7 +71,7 @@ CNAME / robots  → dist/（如果存在）
 2. `.gitignore` 关键规则。
 3. 页面 `<title>`、`lang`、重复 id、资源引用是否存在。
 4. 所有 `assets/**/*.js` 的语法。
-5. 数据模型：id 唯一性、外键、章节、图解类型、`data` 形状、`deepLink`。
+5. 数据模型：id 唯一性、外键、章节、图解类型、`data`/`detail`/`marks` 形状、`MODELS` 引用、`audience`/`deepPath`/`lab`。
 6. `package.json` 的 SemVer 与必需脚本。
 
 新增数据字段或目录时，请同步扩展校验器；校验器是“文档之外的第二份约束”。
@@ -90,7 +90,8 @@ Git tag（vX.Y.Z） == package.json version == CHANGELOG 中的版本标题
 | --- | --- | --- |
 | 页面 | `src/` | kebab-case，如 `compare.html` |
 | 平台样式 | `assets/css/platform.css` | 复用现有变量与组件 |
-| 专题样式 | `assets/css/legacy/` | 仅 legacy 页面使用 |
+| 专题样式 | `assets/css/platform.css` | 实验室等课程级组件统一并入平台样式 |
+| 课程级交互脚本 | `assets/js/` | 自包含 IIFE，如 `finance-lab.js`，由 platform.js 按 `lab` 字段按需加载 |
 | 图片 / 图标 | `assets/img/` | SVG 优先，避免位图 |
 | 数据 | `assets/js/data/` | `catalog-*.js` |
 | 渲染库 | `assets/js/lib/` | `diagram-*.js` |

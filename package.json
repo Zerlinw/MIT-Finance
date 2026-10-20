@@ -1,6 +1,6 @@
 {
   "name": "open-course-atlas",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "专注 QS 名校公开课的图解合集平台：按学校、学科、课程三级组织，只收录图解，不包含视频。",
   "keywords": [
